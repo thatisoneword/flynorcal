@@ -2,30 +2,41 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setModalKey } from '../actions';
 import ReactDOM from 'react-dom';
-import modalData from '../variables/modalContent';
 import HighChart from './HighChart';
 
 class Modal extends React.Component {
 
-  itemType = '';
+  // Minimum requirements to launch a modal are an object that contain:
+  // type: 'image', 'iFrame', 'chart', 'station'
+  // title: string
+  // visualContentUrl: absolute URL
+  //////////////////////////
+  // optional object properties
+  // description: string
+  // link: absolute url
+  // linkText: string
+  // additionalContent: string
+  // stationId: string, this is just for charts
 
   renderModal = () => {
-    // if (this.itemType === 'highchart') {
-    //   return <HighChart stationId={this.stationId} />;
-    // }
 
-    let item = modalData[this.props.modalKey];
-    var imgOrIframe = null;
-    var customLink = null;
+    let item = this.props.modalKey;
+    let imgOrIframe = null;
+    let customLink = null;
 
-    if (item.type === 'image') {
+    if (item.type === 'station') {
+      item.link = item.wundergroundLink;
+      item.linkText = `${item.description}, station: ${item.stationId}`;
+    }
+
+    if (item.type === 'image' || item.type === 'station') {
       imgOrIframe = <a className="modal-img-link" href={item.link} rel="noreferrer" target="_blank">
-        <img height="100%" src={item.imgOrIframeSrc} alt={item.title}/>
+        <img height="100%" src={item.visualContentUrl} alt={item.title}/>
       </a>
     }
     if (item.type === 'iFrame') {
       imgOrIframe = <iframe
-          src={item.imgOrIframeSrc}
+          src={item.visualContentUrl}
           allow={item.allow ? item.allow : ''}
           title={item.title}
           frameBorder="0"
@@ -51,27 +62,16 @@ class Modal extends React.Component {
   }
 
   render() {
-    if (!this.props.modalKey) return null;
-    // const staticData = modalData[this.props.modalKey];
-    // const
-    if (!modalData[this.props.modalKey] && !this.props.stationHistory[this.props.modalKey]) {
-      console.log(`No data for key ${this.props.modalKey}`)
-      return null;
-    }
-    if (!modalData[this.props.modalKey] && this.props.stationHistory[this.props.modalKey]) {
-      // This is a chart
-      this.itemType = 'highchart';
-    } else { // this is a modal that gets it data from the static modalData object
-      this.itemType = modalData[this.props.modalKey].type;
-    }
+    if (!this.props.modalKey) return null; // makes the modal show/hide
 
+    const modal = this.props.modalKey;
 
     return ReactDOM.createPortal(
-      <div className="modal" onClick={() => this.props.setModalKey('')}>
-        <div className={`modal-content ${this.itemType}`} onClick={(e) => e.stopPropagation()}>
-          <span className="close close-modal-btn" onClick={() => this.props.setModalKey('')}>&times;</span>
+      <div className="modal" onClick={() => this.props.setModalKey(null)}>
+        <div className={`modal-content ${modal.type}`} onClick={(e) => e.stopPropagation()}>
+          <span className="close close-modal-btn" onClick={() => this.props.setModalKey(null)}>&times;</span>
           <div id="modal-content-inner">
-            {this.itemType === 'highchart' ? <HighChart stationId={this.props.modalKey} /> : this.renderModal()}
+            {modal.type === 'chart' ? <HighChart stationId={modal.stationId} /> : this.renderModal()}
           </div>
         </div>
       </div>,

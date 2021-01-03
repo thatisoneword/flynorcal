@@ -24,7 +24,7 @@ class HighChart extends React.Component {
   componentDidMount() {
     this.data = {
       title: this.props.allStations[this.props.stationId].title,
-      desc: this.props.allStations[this.props.stationId].description,
+      description: this.props.allStations[this.props.stationId].description,
       dir: [],
       gust: [],
       wind: []
@@ -41,7 +41,7 @@ class HighChart extends React.Component {
     this.options = {
 
       title: { text: this.data.title },
-      subtitle: { text: this.data.desc },
+      subtitle: { text: this.data.description },
       time: {
         getTimezoneOffset: () => this.getTimezoneOffsetForPST()
       },

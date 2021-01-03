@@ -78,8 +78,6 @@ a:hover {
   font-size: 16px;
   margin-top: 50px;
 }
-
-
 .outer-bg-image {
   position: relative;
   height: 207px;
@@ -98,6 +96,9 @@ a:hover {
   background-size: 350px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+}
+.inner-bg-image.top {
+  cursor: pointer;
 }
 .inner-item-history {
   margin-top: 47px;
@@ -402,6 +403,18 @@ h3.modal-title {
   font-weight: 600;
   padding-left: 22px;
 }
+.bar-item.change-location {
+  width: 220px;
+  text-align: right;
+}
+.bar-item.change-location select{
+  width: 100%;
+  margin-top: 10px;
+  padding: 3px;
+  background-color: #ccc;
+  font-weight: 100;
+  border-radius: 7px;
+}
 
 .format-button {
   border: none;
@@ -436,6 +449,7 @@ h3.modal-title {
 .menu-button:hover {
   opacity: 1;
 }
+
 button, [type=button], [type=reset], [type=submit] {
   -webkit-appearance: button;
 }
@@ -447,8 +461,8 @@ button, input {
   overflow: visible;
 }
 button, input, select, textarea, optgroup {
+  FONT-WEIGHT: 200;
   font: inherit;
-  margin: 0;
 }
 .close-button.format-button {
   text-align: right;

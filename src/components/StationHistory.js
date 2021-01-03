@@ -51,9 +51,16 @@ class StationHistory extends React.Component {
     var startLable = utils.formatAMPM(this.historyDataSmall[0].obsTimeLocal);
     var endLable = utils.formatAMPM(this.historyDataSmall[this.historyDataSmall.length-1].obsTimeLocal);
 
+    const modalData = {
+      stationId: this.stationId,
+      title: 'none', // gets it's data from the station history object
+      type: 'chart',
+      visualContentUrl: 'none' //gets it's date from the station history object
+    }
+
     return (
       <div id={`"${this.stationId}-history"`} className="inner-item-history">
-        <div className="history-small-container" key={this.stationId} onClick={() => this.props.setModalKey(this.stationId)}>
+        <div className="history-small-container" key={this.stationId} onClick={() => this.props.setModalKey(modalData)}>
           <div className="history-small-row">
             {this.renderHistoryList()}
           </div>

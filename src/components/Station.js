@@ -10,6 +10,7 @@ import utils from './utils';
 class Station extends React.Component {
 
   stationId = this.props.stationId;
+  cacheWindDir = 0;
 
   componentDidMount() {
     this.props.getCurrentStationData(this.stationId);
@@ -29,14 +30,39 @@ class Station extends React.Component {
     return <div className="station-title"><a href={wundergroundLink} target="_blank" rel="noreferrer">{title}</a></div>
   }
 
+  updateCacheWindDir = () => {
+    this.cacheWindDir = this.props.currentForcast[this.stationId];
+  }
+
+  setWindDirection = () => {
+    const { winddir }  = this.props.currentForcast[this.stationId];
+
+    let rotateDegrees = 1;
+
+    if (winddir > this.cacheWindDir && (winddir - this.cacheWindDir > 180)) {
+      rotateDegrees =  360 - winddir;
+    } else if (winddir < this.cacheWindDir && (this.cacheWindDir - winddir > 180)) {
+      rotateDegrees = 360 + winddir;
+    } else {
+      rotateDegrees = winddir;
+    }
+
+    setTimeout(() => this.updateCacheWindDir(), 1001);
+
+
+    return rotateDegrees;
+  }
+
   renderStationStats = () => {
     if (!this.props.currentForcast[this.stationId]) {
       return <div className="error-or-no-data outer-arrow-container">Station offline</div>;
     }
     const { temp, windSpeed, windGust} = this.props.currentForcast[this.stationId].imperial;
-    const { winddir} = this.props.currentForcast[this.stationId];
+    //const { winddir} = this.props.currentForcast[this.stationId];
 
-    const rotateStyles = {transform: `rotate(${winddir}deg)`, msTransform: `rotate(${winddir}deg)`};
+    this.setWindDirection();
+
+    const rotateStyles = {transform: `rotate(${this.setWindDirection()}deg)`, msTransform: `rotate(${this.setWindDirection()}deg)`};
 
     return (
       <>
@@ -45,7 +71,7 @@ class Station extends React.Component {
         <div id={`"${this.stationId}-arrow"`} className="arrow-container arrow-up" style={rotateStyles}>
             <svg xmlns="http://www.w3.org/2000/svg" width="35px" viewBox="0 0 24 24" className="svgArrow">
               <path d="M0 3.795l2.995-2.98 11.132 11.185-11.132 11.186-2.995-2.981 8.167-8.205-8.167-8.205zm18.04 8.205l-8.167 8.205 2.995 2.98 11.132-11.185-11.132-11.186-2.995 2.98 8.167 8.206z"/>
-              <title>{`From ${winddir} degrees`}</title>
+              <title>{`From ${this.setWindDirection()} degrees`}</title>
             </svg>
           </div>
           <div className="station-speed-gust">

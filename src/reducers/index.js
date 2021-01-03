@@ -19,6 +19,7 @@ const INITIAL_STATE = {
   isDaytime: true,
   appClasses: {},
   modalKey: '',
+  flyingSite: 'musselRock',
   error: null
 }
 
@@ -93,6 +94,15 @@ export const isDaytimeReducer = (state = INITIAL_STATE.isDaytime, action) => {
   }
 }
 
+export const flyingSiteReducer = (state = INITIAL_STATE.flyingSite, action) => {
+  switch (action.type) {
+  case 'SET_FLYING_SITE':
+    return action.payload;
+  default:
+    return state;
+  }
+}
+
 export const errorReducer = (state = INITIAL_STATE.error, action) => {
   const { error } = action;
   if (error) {
@@ -111,5 +121,6 @@ export default combineReducers({
   isDaytime: isDaytimeReducer,
   appClasses: toggleAppClassesReducer,
   modalKey: modalKeyReducer,
+  flyingSite: flyingSiteReducer,
   error: errorReducer
 });

@@ -1,21 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setImgCacheBusterDelayed } from '../actions';
+import { setImgCacheBusterDelayed, setModalKey } from '../actions';
 
 class StationImg extends React.Component {
 
   render() {
     if (!this.props.stationId) return;
 
-    const { stationImg, stationNightImg } = this.props.allStations[this.props.stationId];
+    const { visualContentUrl, stationNightImg } = this.props.allStations[this.props.stationId];
 
-    const topImgPath = `${stationImg}?random=${this.props.imgCacheBuster}`;
-    const bottomImgPath = `${stationImg}?random=${this.props.imgCacheBusterDelayed}`;
+    const topImgPath = `${visualContentUrl}?random=${this.props.imgCacheBuster}`;
+    const bottomImgPath = `${visualContentUrl}?random=${this.props.imgCacheBusterDelayed}`;
     const stationNightImgPath = `${process.env.PUBLIC_URL}/images/${stationNightImg}`;
 
     const nightBgStyle = {backgroundImage: `url(${stationNightImgPath})`};
     const dayBgStyleBottom = {backgroundImage: `url(${bottomImgPath})`};
     const dayBgStyleTop = {backgroundImage: `url(${topImgPath})`};
+
 
     // The JSX is 3 stacked divs with background images.
     // outer-bg-image bottom div contains the night/backup image in case the other 2 don't load
@@ -28,7 +29,11 @@ class StationImg extends React.Component {
           this.props.isDaytime &&
           <>
             <div className="inner-bg-image bottom" style={dayBgStyleBottom}></div>
-            <div className="inner-bg-image top" style={dayBgStyleTop}></div>
+            <div
+              className="inner-bg-image top"
+              style={dayBgStyleTop}
+              onClick={() => this.props.setModalKey(this.props.allStations[this.props.stationId])}>
+            </div>
           </>
         }
       </div>
@@ -45,4 +50,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect( mapStateToProps, { setImgCacheBusterDelayed })(StationImg);
+export default connect( mapStateToProps, { setImgCacheBusterDelayed, setModalKey })(StationImg);

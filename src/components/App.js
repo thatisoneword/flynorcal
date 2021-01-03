@@ -11,7 +11,6 @@ import utils from './utils';
 
 // TODO:
 // fix animate svgArrow
-// get Charts working
 // add dropdown for other regions
 // banner messages
 
@@ -38,6 +37,9 @@ class App extends React.Component {
     if ( nowISO > dawnISO && (nowISO < duskISO) !== this.props.isDaytime ) {
       this.props.setIsDaytimeAction(!this.props.isDaytime);
     }
+
+    ///// Turn it to Day for development purposes //////
+    //this.props.setIsDaytimeAction(true); // true = day / false = night
   }
 
   setImgCacheBuster = () => {

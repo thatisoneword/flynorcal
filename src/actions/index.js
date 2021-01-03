@@ -12,6 +12,12 @@ export const setImgCacheBuster = () => {
   return { type: 'SET_IMG_CACHEBUSTER' };
 }
 
+export const setFlyingSite = flyingSite => {
+  return {
+    type: 'SET_FLYING_SITE',
+    payload: flyingSite
+  };
+}
 
 export const setIsDaytimeAction = isDaytime => {
   return {

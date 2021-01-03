@@ -1,8 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { toggleAppClasses, setModalKey } from '../actions';
+import modalContent from '../variables/modalContent';
+import LocationSelect from './LocationSelect';
 
 class Sidebar extends React.Component {
+
+  showLocationSelect = false;
 
   openModal = (modalName) => {
     console.log('TODO: make openModal work', modalName);
@@ -32,21 +36,23 @@ class Sidebar extends React.Component {
 
         <button onClick={() => this.props.toggleAppClasses('show-menu')}className="bar-item format-button close-button close">&times;</button>
 
+        { this.showLocationSelect && <LocationSelect /> }
+
         <div className="bar-item bar-header top-space" >Mussel Rock (The Dumps)</div>
-        <button className="bar-item format-button" onClick={() => this.props.setModalKey('cheetahLauchCam')}>Cheetah Launch Live Cam</button>
+        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.cheetahLauchCam)}>Cheetah Launch Live Cam</button>
 
         <div className="bar-item bar-header top-space" >NWS Forecasts</div>
-        <button className="bar-item format-button" onClick={() => this.props.setModalKey('nwsMussel')}>Mussel Rock NWS</button>
-        <button className="bar-item format-button" onClick={() => this.props.setModalKey('nwsFunston')}>Fort Funston NWS</button>
+        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.nwsMussel)}>Mussel Rock NWS</button>
+        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.nwsFunston)}>Fort Funston NWS</button>
 
         <div className="bar-item bar-header top-space">Wunderground Forecasts</div>
         {this.props.allStations && this.renderForcasts()}
 
         <div className="bar-item bar-header top-space">Other Forecasts</div>
-        <button className="bar-item format-button" onClick={() => this.props.setModalKey('windyforecast')}>Windy.com</button>
-        <button className="bar-item format-button" onClick={() => this.props.setModalKey('fogTodayforecast')}>Fog Today</button>
-        <button className="bar-item format-button" onClick={() => this.props.setModalKey('tidesPacifica')}>Tides for Pacifica</button>
-        <button className="bar-item format-button" onClick={() => this.props.setModalKey('nwsBayAreaDiscission')}>NWS Area Forcast Discussion</button>
+        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.windyforecast)}>Windy.com</button>
+        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.fogTodayforecast)}>Fog Today</button>
+        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.tidesPacifica)}>Tides for Pacifica</button>
+        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.nwsBayAreaDiscission)}>NWS Area Forcast Discussion</button>
         <a href="https://www.purpleair.com/map?opt=1/mAQI/a10/cC0#10.88/37.7499/-122.3566" className="bar-item format-button" target="_blank" rel="noreferrer">Purple Air</a>
 
         <div className="bar-item bar-header top-space">Other Resources</div>
@@ -65,4 +71,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { toggleAppClasses, setModalKey  })(Sidebar);
+export default connect(mapStateToProps, { toggleAppClasses, setModalKey })(Sidebar);
