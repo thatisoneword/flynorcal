@@ -9,14 +9,22 @@ import utils from './utils';
 
 class Station extends React.Component {
 
+
+
   stationId = this.props.stationId;
-  cacheWindDir = 0;
+  lastWindDir = null;
+  calculatedWindDir = null;
+  updateInterval = null
 
   componentDidMount() {
     this.props.getCurrentStationData(this.stationId);
     const {stationStatsUpdateIntervalInSeconds} = this.props.allStations[this.stationId];
     // updates the stations data on the interval set in the stations.js file
-    setInterval( () => this.updateCurrentStationData(this.stationId), stationStatsUpdateIntervalInSeconds * 1000 );
+    this.updateInterval = setInterval( () => this.updateCurrentStationData(this.stationId), stationStatsUpdateIntervalInSeconds * 1000 );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.updateInterval);
   }
 
   updateCurrentStationData = stationId => {
@@ -30,27 +38,28 @@ class Station extends React.Component {
     return <div className="station-title"><a href={wundergroundLink} target="_blank" rel="noreferrer">{title}</a></div>
   }
 
-  updateCacheWindDir = () => {
-    this.cacheWindDir = this.props.currentForcast[this.stationId];
+  updateLastWindDir = winddir => {
+    this.lastWindDir = winddir;
+    this.calculatedWindDir = winddir;
   }
 
+  // This makes the arrow behave more like a windsock
   setWindDirection = () => {
     const { winddir }  = this.props.currentForcast[this.stationId];
-
-    let rotateDegrees = 1;
-
-    if (winddir > this.cacheWindDir && (winddir - this.cacheWindDir > 180)) {
-      rotateDegrees =  360 - winddir;
-    } else if (winddir < this.cacheWindDir && (this.cacheWindDir - winddir > 180)) {
-      rotateDegrees = 360 + winddir;
+    if (this.lastWindDir === null) { // first loaded condition
+      this.updateLastWindDir(winddir);
     } else {
-      rotateDegrees = winddir;
+      if (winddir > this.lastWindDir && (winddir - this.lastWindDir > 180)) {
+        this.calculatedWindDir = `-${360 - winddir}`;
+      } else if (winddir < this.lastWindDir && (this.lastWindDir - winddir > 180)) {
+        this.calculatedWindDir = 360 + winddir;
+      } else {
+        this.calculatedWindDir = winddir;
+      }
+      // time for the animation to complete and then reset the arrow to
+      // 0-360 degrees so we are ready for the next update
+      setTimeout(this.updateLastWindDir(winddir), 1001);
     }
-
-    setTimeout(() => this.updateCacheWindDir(), 1001);
-
-
-    return rotateDegrees;
   }
 
   renderStationStats = () => {
@@ -62,7 +71,7 @@ class Station extends React.Component {
 
     this.setWindDirection();
 
-    const rotateStyles = {transform: `rotate(${this.setWindDirection()}deg)`, msTransform: `rotate(${this.setWindDirection()}deg)`};
+    const rotateStyles = {transform: `rotate(${this.calculatedWindDir}deg)`, msTransform: `rotate(${this.calculatedWindDir}deg)`};
 
     return (
       <>
@@ -71,7 +80,7 @@ class Station extends React.Component {
         <div id={`"${this.stationId}-arrow"`} className="arrow-container arrow-up" style={rotateStyles}>
             <svg xmlns="http://www.w3.org/2000/svg" width="35px" viewBox="0 0 24 24" className="svgArrow">
               <path d="M0 3.795l2.995-2.98 11.132 11.185-11.132 11.186-2.995-2.981 8.167-8.205-8.167-8.205zm18.04 8.205l-8.167 8.205 2.995 2.98 11.132-11.185-11.132-11.186-2.995 2.98 8.167 8.206z"/>
-              <title>{`From ${this.setWindDirection()} degrees`}</title>
+              <title>{`From ${this.calculatedWindDir} degrees`}</title>
             </svg>
           </div>
           <div className="station-speed-gust">

@@ -46,7 +46,7 @@ class HighChart extends React.Component {
         getTimezoneOffset: () => this.getTimezoneOffsetForPST()
       },
       chart: {
-        margin: [40, 20, 35, 25]
+        margin: [40, 20, 45, 25]
       },
       xAxis: {
           type: 'datetime',

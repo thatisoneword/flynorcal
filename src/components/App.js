@@ -16,8 +16,10 @@ import utils from './utils';
 
 class App extends React.Component {
 
+  cacheBusterIntervalInMinutes = 5;
+
   componentDidMount() {
-    setInterval( () => this.setImgCacheBuster(), 60000 * 5 );
+    setInterval( () => this.setImgCacheBuster(), 60000 * this.cacheBusterIntervalInMinutes );
     setInterval( () => this.setIsDaytime(), 60000 );
     this.setIsDaytime();
   }

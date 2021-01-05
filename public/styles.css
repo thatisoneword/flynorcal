@@ -31,11 +31,11 @@ a:hover {
   margin: 20px 0;
 }
 .flex-item {
-  size: A5;
+  /* size: A5; */
   position: relative;
   text-align: center;
   background-color: #302d24;
-  height: 565px;
+  height: 555px;
   width: 350px;
   margin-bottom: 15px;
 }
@@ -80,11 +80,11 @@ a:hover {
 }
 .outer-bg-image {
   position: relative;
-  height: 207px;
+  height: 195px;
   overflow: hidden;
   background-repeat: no-repeat;
   background-size: 350px;
-  background-position: 50% 50%;
+  background-position: 80% 10%;
 }
 .inner-bg-image {
   position: absolute;
@@ -95,7 +95,7 @@ a:hover {
   overflow: hidden;
   background-size: 350px;
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 80% 10%;
 }
 .inner-bg-image.top {
   cursor: pointer;

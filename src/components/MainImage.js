@@ -4,7 +4,7 @@ import { toggleAppClasses } from '../actions';
 
 class MainImage extends React.Component {
 
-  mainImgURL = 'http://www.flyfunston.org/newwebcam/panolarge.jpg';
+  mainImgURL = 'http://www.flyfunston.org/newwebcam/panolarge.jpg'; //(3072×1450)
 
   zoomImage = () => {
     this.props.toggleAppClasses('main-image-zoomed')

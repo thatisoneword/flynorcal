@@ -8,18 +8,15 @@ class selectLocation extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    //console.log('the select value is', this.state.value);
   }
 
   handleChange = (e) => {
-    //this.setState({value: e.target.value});
-    console.log('the select value issss', e.target.value);
     this.props.setFlyingSite(e.target.value);
   }
 
   render() {
     return(
-      <div className="bar-item bar-header top-space change-location">
+      <div className="bar-item bar-header change-location">
         <form onSubmit={this.handleSubmit}>
           <label>
             <div>Change Flying Site</div>

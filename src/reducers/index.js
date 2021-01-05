@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
-import stations from '../variables/stations';
+//import stations from '../variables/stations';
+import musselRock from '../variables/musselRock';
+import mtTam from '../variables/mtTam';
 
 // const numsArrayReducer = (numsArray = [], action) => {
 //   if (action.type === 'UPDATE_NUMS') {
@@ -8,6 +10,10 @@ import stations from '../variables/stations';
 //   return numsArray;
 // }
 //
+const combineStations = {
+  musselRock: musselRock,
+  mtTam: mtTam
+}
 const initTime = new Date().getTime();
 
 const INITIAL_STATE = {
@@ -21,6 +27,23 @@ const INITIAL_STATE = {
   modalKey: '',
   flyingSite: 'musselRock',
   error: null
+}
+export const stationReducer = (state = combineStations[INITIAL_STATE.flyingSite], action) => {
+  switch (action.type) {
+  case 'SET_FLYING_SITE':
+    return {...combineStations[action.payload]};
+  default:
+    return state;
+  }
+}
+
+export const flyingSiteReducer = (state = INITIAL_STATE.flyingSite, action) => {
+  switch (action.type) {
+  case 'SET_FLYING_SITE':
+    return action.payload;
+  default:
+    return state;
+  }
 }
 
 export const toggleAppClassesReducer = (state = INITIAL_STATE.appClasses, action) => {
@@ -94,15 +117,6 @@ export const isDaytimeReducer = (state = INITIAL_STATE.isDaytime, action) => {
   }
 }
 
-export const flyingSiteReducer = (state = INITIAL_STATE.flyingSite, action) => {
-  switch (action.type) {
-  case 'SET_FLYING_SITE':
-    return action.payload;
-  default:
-    return state;
-  }
-}
-
 export const errorReducer = (state = INITIAL_STATE.error, action) => {
   const { error } = action;
   if (error) {
@@ -112,7 +126,8 @@ export const errorReducer = (state = INITIAL_STATE.error, action) => {
 }
 
 export default combineReducers({
-  allStations: () => stations,
+  //allStations: () => stations,
+  allStations: stationReducer,
   currentForcasts: currentForcastReducer,
   stationHistory: stationHistoryReducer,
   imgCacheBuster: imgCacheBusterReducer,

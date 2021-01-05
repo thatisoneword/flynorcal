@@ -6,7 +6,7 @@ import LocationSelect from './LocationSelect';
 
 class Sidebar extends React.Component {
 
-  showLocationSelect = false;
+  showLocationSelect = true;
 
   openModal = (modalName) => {
     console.log('TODO: make openModal work', modalName);

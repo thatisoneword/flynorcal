@@ -31,12 +31,12 @@ class Modal extends React.Component {
 
     if (item.type === 'image' || item.type === 'station') {
       imgOrIframe = <a className="modal-img-link" href={item.link} rel="noreferrer" target="_blank">
-        <img height="100%" src={item.visualContentUrl} alt={item.title}/>
+        <img height="100%" src={`${item.visualContentUrl}?cache=${this.props.imgCacheBuster}`} alt={item.title}/>
       </a>
     }
     if (item.type === 'iFrame') {
       imgOrIframe = <iframe
-          src={item.visualContentUrl}
+          src={`${item.visualContentUrl}?cache=${this.props.imgCacheBuster}`}
           allow={item.allow ? item.allow : ''}
           title={item.title}
           frameBorder="0"

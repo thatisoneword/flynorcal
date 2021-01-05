@@ -2,19 +2,24 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getHistoryStationData, setModalKey } from '../actions';
 import utils from './utils';
-import settings from '../variables/appSettings';
 
 class StationHistory extends React.Component {
 
   stationId = this.props.stationId;
   histArray = [];
-  historyDataSmall = []
+  historyDataSmall = [];
+  updateInterval = null;
+  historyDataRefreshInMinutes = 6 // Minute update interval to fetch the historical data
 
   componentDidMount() {
     this.props.getHistoryStationData(this.stationId);
     // random 0 - 9 seconds added so they don't all update at once
-    const updateInterval = 60000 * settings.historyDataRefreshInMinutes + (Math.floor(Math.random() * 10000))
-    setInterval( () => this.props.getHistoryStationData(this.stationId), updateInterval);
+    const updateInterval = 60000 * this.historyDataRefreshInMinutes + (Math.floor(Math.random() * 10000))
+    this.updateInterval = setInterval( () => this.props.getHistoryStationData(this.stationId), updateInterval);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.updateInterval);
   }
 
   renderHistoryList = () => {
