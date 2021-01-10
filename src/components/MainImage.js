@@ -4,9 +4,9 @@ import { toggleAppClasses } from '../actions';
 
 class MainImage extends React.Component {
 
-  mainImgURL = 'http://www.flyfunston.org/newwebcam/panolarge.jpg'; //(3072×1450)
-
   zoomImage = () => {
+    if (!this.props.isDaytime) return;
+
     this.props.toggleAppClasses('main-image-zoomed')
     window.scroll({
       top: 0,
@@ -15,16 +15,24 @@ class MainImage extends React.Component {
     });;
   }
 
+  useMainImage = null;
+
+  renderMainImg = () => {
+    this.useMainImage = this.props.isDaytime && !!(this.props.flyingSite.mainImgUrl);
+
+    if (this.useMainImage) {
+      return <img id="mainImg" src={`${this.props.flyingSite.mainImgUrl}?random=${this.props.imgCacheBuster}`} alt="Fort Funston" />;
+    } else {
+      return <img id="backup-image" src={this.props.flyingSite.backupImg} alt="Mussel Rock" />;
+    }
+  }
+
   render() {
     return(
       <div id="main-img-and-message"
         onClick={() => this.zoomImage()}
-        className={!this.props.isDaytime ? 'useBackupImage' : ''}
-      >
-        <img id="mainImg"
-              src={`${this.mainImgURL}?random=${this.props.imgCacheBuster}`}
-              alt="Fort Funston" />
-        <img id="backup-image" src="./images/mussel1.jpg" alt="Mussel Rock" />
+        className={!this.useMainImage ? 'useBackupImage' : ''}>
+        { this.renderMainImg() }
       </div>
     );
   };
@@ -34,6 +42,7 @@ const mapStateToProps = (state) => {
   return {
     isDaytime: state.isDaytime,
     imgCacheBuster: state.imgCacheBuster,
+    flyingSite: state.flyingSite
   }
 }
 

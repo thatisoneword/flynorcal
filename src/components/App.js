@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import suncalc from 'suncalc';
+import suncalc from 'suncalc'; // this does dawn/dusk, sunrise/sunset and other time calculations
 import { setImgCacheBuster, setImgCacheBusterDelayed, setIsDaytimeAction, toggleAppClasses } from '../actions';
 
 import Sidebar from './Sidebar';
@@ -10,8 +10,7 @@ import Modal from './Modal';
 import utils from './utils';
 
 // TODO:
-// fix animate svgArrow
-// add dropdown for other regions
+// add main images for other flying sites
 // banner messages
 
 class App extends React.Component {
@@ -20,8 +19,12 @@ class App extends React.Component {
 
   componentDidMount() {
     setInterval( () => this.setImgCacheBuster(), 60000 * this.cacheBusterIntervalInMinutes );
-    setInterval( () => this.setIsDaytime(), 60000 );
+    setInterval( () => this.setIsDaytime(), 60000 ); // check if it's daytime once a minute
     this.setIsDaytime();
+
+    // console.log('this the cookie', utils.getCookie('flyingSite'));
+    // console.log('setting cookie', utils.setCookie('flyingSite1', 'bop', 1))
+    // console.log('the full cookie', document.cookie);
   }
 
   setIsDaytime = () => {
@@ -35,13 +38,13 @@ class App extends React.Component {
     const duskISO = times.nauticalDusk.toISOString();
     const nowISO = new Date().toISOString();
 
-    // only set it if it's different
+    // only set it if it changed
     if ( nowISO > dawnISO && (nowISO < duskISO) !== this.props.isDaytime ) {
       this.props.setIsDaytimeAction(!this.props.isDaytime);
     }
 
-    ///// Turn it to Day for development purposes //////
-    //this.props.setIsDaytimeAction(true); // true = day / false = night
+    ///// Turn it to day or night for development purposes //////
+    // this.props.setIsDaytimeAction(false); // true = day / false = night
   }
 
   setImgCacheBuster = () => {
@@ -49,7 +52,7 @@ class App extends React.Component {
       this.props.setImgCacheBuster();
       // this allows the new image to load while the last cached image is in the background
       // This prevents distracting flickering as the new image loads so you don't see the night/backup image
-      // after three seconds the image behind recieves the same cache buster and changes
+      // then after three seconds the image behind recieves the same cache buster and changes
       // to the new image in preperation for the next update
       setTimeout(() => this.props.setImgCacheBusterDelayed(this.props.imgCacheBuster), 3000);
     }

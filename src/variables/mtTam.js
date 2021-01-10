@@ -2,26 +2,6 @@
 // visualContentUrl is optional use 'visualContentUrl: null' for no image
 // the station key and the stationId MUST be the same
 var stations = {
-  // 'KCASANFR69': {
-  //   stationId: 'KCASANFR69',
-  //   type: 'station',
-  //   title: 'Fort Funston',
-  //   description: 'Fort Funston Ropes building',
-  //   wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/san-francisco/KCASANFR69',
-  //   visualContentUrl: 'http://www.flyfunston.org/newwebcam/ropes1wslarge.jpg',
-  //   stationNightImg: 'funston1_sm.jpg',
-  //   stationStatsUpdateIntervalInSeconds: 207, // Seconds interval
-  // },
-  // 'KCASANFR1683': {
-  //   stationId: 'KCASANFR1683',
-  //   type: 'station',
-  //   title: 'Ocean Beach (Outer Sunset)',
-  //   description: 'Outer Sunset near Lincoln',
-  //   wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/san-francisco/KCASANFR1683',
-  //   visualContentUrl: 'http://www.oceanbeach.org/images/sunset.jpg',
-  //   stationNightImg: 'ocean_beach1_sm.jpg',
-  //   stationStatsUpdateIntervalInSeconds: 301, // Seconds interval
-  // },
   'KCAMILLV30': {
     stationId: 'KCAMILLV30',
     type: 'station',
@@ -29,7 +9,37 @@ var stations = {
     description: 'Mill Valley, CA',
     wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/mill-valley/KCAMILLV30',
     visualContentUrl: 'http://www.sheltons.net/wx/webcam800.jpg',
+    stationNightImg: 'mike_tam_sm.jpg',
+    stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
+  },
+  'KCASAUSA58': {
+    stationId: 'KCASAUSA58',
+    type: 'station',
+    title: 'Muir Beach (Larry\'s)',
+    description: 'Larry\'s Weather Station above Muir Beach',
+    wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/sausalito/KCASAUSA58',
+    visualContentUrl: 'https://images-webcams.windy.com/50/1604847950/current/full/1604847950.jpg',
+    stationNightImg: 'silhoutte_sm.jpg',
+    stationStatsUpdateIntervalInSeconds: 207, // Seconds interval
+  },
+  'KCAMILLV87': {
+    stationId: 'KCAMILLV87',
+    type: 'station',
+    title: 'Mt. Home Inn (Bert)',
+    description: 'Near Moutain Home Inn on Panorama',
+    wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/san-francisco/KCASANFR1683',
+    visualContentUrl: 'http://api.nvseismolab.org/camera/Axis-TamWest',
     stationNightImg: 'ocean_beach1_sm.jpg',
+    stationStatsUpdateIntervalInSeconds: 215, // Seconds interval
+  },
+  'KCASTINS13': {
+    stationId: 'KCASTINS13',
+    type: 'station',
+    title: 'Stinson Beach',
+    description: 'Stinson Beach Ca.',
+    wundergroundLink: 'https://www.wunderground.com/weather/us/ca/stinson-beach/KCASTINS13',
+    visualContentUrl: 'http://api.nvseismolab.org/camera/Axis-Bolinas',
+    stationNightImg: 'stinson_beach_sm.jpg',
     stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
   }
 }

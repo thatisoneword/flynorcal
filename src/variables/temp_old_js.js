@@ -197,7 +197,8 @@ function populateWeatherData(data) {
 
   var temp = item.imperial.temp ? `${item.imperial.temp}° F` : '&nbsp';
 
-  var stationHtml = `<div class="station-container">
+  var stationHtml =
+  `<div class="station-container">
       <div class="station-title">${stations[item.stationID].title}</div>
       <div class="station-temp">${temp}</div>
       <div class="outer-arrow-container">

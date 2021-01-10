@@ -1,4 +1,5 @@
 import getCurrentForcast from '../apis/axiosGetStationData';
+import utils from '../components/utils';
 // import { stations } from '../variables/stations';
 
 export const toggleAppClasses = (classToToggle) => {
@@ -13,6 +14,8 @@ export const setImgCacheBuster = () => {
 }
 
 export const setFlyingSite = flyingSite => {
+  utils.setCookie('flyingSite', flyingSite, 365);
+  window.location.hash = flyingSite;
   return {
     type: 'SET_FLYING_SITE',
     payload: flyingSite

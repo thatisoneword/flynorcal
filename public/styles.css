@@ -12,9 +12,11 @@ a, a:visited {
 a:hover {
   color: #efefef
 }
+#mainImg {
+  cursor: zoom-in;
+}
 #mainImg, #backup-image {
   width: 100%;
-  cursor: zoom-in;
   -webkit-user-select: none;
 }
 .main-image-zoomed #mainImg,
@@ -123,7 +125,7 @@ a:hover {
 .main-image-zoomed #main-img-and-message {
   overflow-x: scroll;
 }
-
+/*
 #main-img-and-message.show-camera-message #mainImg,
 #main-img-and-message.useBackupImage #mainImg {
   display: none;
@@ -135,7 +137,7 @@ a:hover {
 
 #backup-image {
   display: none;
-}
+} */
 
 
 #main-img-and-message:hover .title-container {

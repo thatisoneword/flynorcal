@@ -4,8 +4,6 @@ import { setFlyingSite } from '../actions';
 
 class selectLocation extends React.Component {
 
-  // state = { value: 'grapefruit' }
-
   handleSubmit = (e) => {
     e.preventDefault();
   }
@@ -20,11 +18,12 @@ class selectLocation extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             <div>Change Flying Site</div>
-            <select value={this.props.flyingSite} onChange={this.handleChange}>
-              <option value="musselRock">Mussel Rock (The Dumps)</option>
-              <option value="mtTam">Mt. Tam</option>
-              <option value="missionPeak">Mission Peak</option>
-              <option value="MtDiablo">Mt. Diablo</option>
+            <select value={this.props.flyingSite.name} onChange={this.handleChange}>
+              <option value='musselRock'>Mussel Rock (The Dumps)</option>
+              <option value='mtTam'>Mt. Tam</option>
+              <option value='missionPeak'>Mission Peak</option>
+              <option value='mtDiablo'>Mt. Diablo</option>
+              <option value='otherSites'>Other Sites</option>
             </select>
           </label>
         </form>
@@ -32,6 +31,7 @@ class selectLocation extends React.Component {
     )
   }
 }
+
 const mapStateToProps = (state) => {
   return {
     flyingSite: state.flyingSite

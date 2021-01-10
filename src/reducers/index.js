@@ -1,18 +1,51 @@
 import { combineReducers } from 'redux';
 //import stations from '../variables/stations';
+import utils from '../components/utils';
 import musselRock from '../variables/musselRock';
 import mtTam from '../variables/mtTam';
+import missionPeak from '../variables/missionPeak';
+import mtDiablo from '../variables/mtDiablo';
+import otherSites from '../variables/otherSites';
 
-// const numsArrayReducer = (numsArray = [], action) => {
-//   if (action.type === 'UPDATE_NUMS') {
-//     return [...numsArray, action.payload];
-//   }
-//   return numsArray;
-// }
-//
+const sitesGeneralInfo = {
+  musselRock: {
+    name: 'musselRock',
+    title: 'Mussel Rock (The Dumps)',
+    mainImgUrl: 'http://www.flyfunston.org/newwebcam/panolarge.jpg',
+    backupImg: './images/mussel1.jpg'
+  },
+  mtTam: {
+    name: 'mtTam',
+    title: 'Mt. Tam',
+    mainImgUrl: null,
+    backupImg: './images/tam_from_OB.jpg'
+  },
+  missionPeak: {
+    name: 'missionPeak',
+    title: 'Mission Peak',
+    mainImgUrl: null,
+    backupImg: './images/mission_peak_wide.jpg'
+  },
+  mtDiablo: {
+    name: 'mtDiablo',
+    title: 'Mt. Diablo',
+    mainImgUrl: null,
+    backupImg: './images/mount_diablo_panoramic.jpg'
+  },
+  otherSites: {
+    name: 'otherSites',
+    title: 'Other Flying Sites',
+    mainImgUrl: null,
+    backupImg: './images/shasta_lg.jpg'
+  }
+}
+
 const combineStations = {
-  musselRock: musselRock,
-  mtTam: mtTam
+  musselRock,
+  mtTam,
+  missionPeak,
+  mtDiablo,
+  otherSites
 }
 const initTime = new Date().getTime();
 
@@ -28,7 +61,22 @@ const INITIAL_STATE = {
   flyingSite: 'musselRock',
   error: null
 }
-export const stationReducer = (state = combineStations[INITIAL_STATE.flyingSite], action) => {
+
+const getFlyingSiteNameFromCookie = () => {
+  const flyingSite = utils.getCookie('flyingSite')
+  const urlPath = window.location.hash.slice(1);
+
+ if (!!combineStations[urlPath] && !!sitesGeneralInfo[urlPath]) {
+    return urlPath;
+  } else if (!!combineStations[flyingSite] && !!sitesGeneralInfo[flyingSite] ) {
+    return flyingSite;
+  } else {
+    // either the cookie is not found or there is no date for the key in the objects above
+    return INITIAL_STATE.flyingSite;
+  }
+}
+
+export const stationReducer = (state = combineStations[getFlyingSiteNameFromCookie()], action) => {
   switch (action.type) {
   case 'SET_FLYING_SITE':
     return {...combineStations[action.payload]};
@@ -37,10 +85,10 @@ export const stationReducer = (state = combineStations[INITIAL_STATE.flyingSite]
   }
 }
 
-export const flyingSiteReducer = (state = INITIAL_STATE.flyingSite, action) => {
+export const flyingSiteReducer = (state = sitesGeneralInfo[getFlyingSiteNameFromCookie()], action) => {
   switch (action.type) {
   case 'SET_FLYING_SITE':
-    return action.payload;
+    return {...sitesGeneralInfo[action.payload]};
   default:
     return state;
   }
@@ -126,7 +174,6 @@ export const errorReducer = (state = INITIAL_STATE.error, action) => {
 }
 
 export default combineReducers({
-  //allStations: () => stations,
   allStations: stationReducer,
   currentForcasts: currentForcastReducer,
   stationHistory: stationHistoryReducer,
