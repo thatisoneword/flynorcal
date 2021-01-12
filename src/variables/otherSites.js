@@ -8,10 +8,24 @@ var stations = {
     title: 'Whaleback / Herd Peak',
     description: 'Weed, CA',
     wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/weed/KCAWEED23',
-    visualContentUrl: 'http://api.nvseismolab.org/camera/Axis-Weed1',
+    visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-Weed1',
+    visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-Weed1',
+    stationNightImg: 'ocean_beach1_sm.jpg',
+    stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
+  },
+  'KCAELKCR11': {
+    stationId: 'KCAELKCR11',
+    type: 'station',
+    title: 'Potato Hill / Elk Creek Stn.',
+    description: 'Elk Creek, CA',
+    wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/elk-creek/KCAELKCR11',
+    visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-Sites1',
+    visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-Sites1',
     stationNightImg: 'ocean_beach1_sm.jpg',
     stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
   }
 }
+
+
 
 export default stations;

@@ -9,10 +9,7 @@ import utils from './utils';
 
 class Station extends React.Component {
 
-
-
   stationId = this.props.stationId;
-  lastWindDir = null;
   calculatedWindDir = null;
   updateInterval = null
 
@@ -38,27 +35,13 @@ class Station extends React.Component {
     return <div className="station-title"><a href={wundergroundLink} target="_blank" rel="noreferrer">{title}</a></div>
   }
 
-  updateLastWindDir = winddir => {
-    this.lastWindDir = winddir;
-    this.calculatedWindDir = winddir;
-  }
-
-  // This makes the arrow behave more like a windsock
+  // This makes the arrow behave more like a windsock when passing Due North
   setWindDirection = () => {
     const { winddir }  = this.props.currentForcast[this.stationId];
-    if (this.lastWindDir === null) { // first loaded condition
-      this.updateLastWindDir(winddir);
+    if (winddir > 180) {
+      this.calculatedWindDir = `-${360 - winddir}`;
     } else {
-      if (winddir > this.lastWindDir && (winddir - this.lastWindDir > 180)) {
-        this.calculatedWindDir = `-${360 - winddir}`;
-      } else if (winddir < this.lastWindDir && (this.lastWindDir - winddir > 180)) {
-        this.calculatedWindDir = 360 + winddir;
-      } else {
-        this.calculatedWindDir = winddir;
-      }
-      // time for the animation to complete and then reset the arrow to
-      // 0-360 degrees so we are ready for the next update
-      setTimeout(this.updateLastWindDir(winddir), 1001);
+      this.calculatedWindDir = winddir;
     }
   }
 

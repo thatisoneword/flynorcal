@@ -26,12 +26,15 @@ class Modal extends React.Component {
 
     if (item.type === 'station') {
       item.link = item.wundergroundLink;
-      item.linkText = `${item.description}, station: ${item.stationId}`;
+      item.linkText = `${item.description} - station: ${item.stationId}`;
     }
 
     if (item.type === 'image' || item.type === 'station') {
-      imgOrIframe = <a className="modal-img-link" href={item.link} rel="noreferrer" target="_blank">
-        <img height="100%" src={`${item.visualContentUrl}?cache=${this.props.imgCacheBuster}`} alt={item.title}/>
+      imgOrIframe = <a className="modal-img-link" href={`${item.visualContentUrlAlt || item.visualContentUrl}?cache=${this.props.imgCacheBuster}`} rel="noreferrer" target="_blank">
+        <img
+          height="100%"
+          src={`${item.visualContentUrlAlt || item.visualContentUrl}?cache=${this.props.imgCacheBuster}`}
+          alt={item.title}/>
       </a>
     }
     if (item.type === 'iFrame') {

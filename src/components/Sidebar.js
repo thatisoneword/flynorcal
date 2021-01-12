@@ -4,6 +4,9 @@ import { toggleAppClasses} from '../actions';
 import LocationSelect from './LocationSelect';
 import SidebarMusselRock from './SidebarMusselRock';
 import SidebarMtTam from './SidebarMtTam';
+import SidebarMissionPeak from './SidebarMissionPeak';
+import SidebarMtDiablo from './SidebarMtDiablo';
+import SidebarOtherSites from './SidebarOtherSites';
 
 class Sidebar extends React.Component {
 
@@ -11,10 +14,16 @@ class Sidebar extends React.Component {
 
   getLocationSpcificSidebarComponent = () => {
     switch (this.props.flyingSite.name) {
-    case 'mtTam':
-       return <SidebarMtTam />;
-    default:
-      return <SidebarMusselRock />
+      case 'mtTam':
+         return <SidebarMtTam />;
+      case 'missionPeak':
+        return <SidebarMissionPeak />;
+      case 'mtDiablo':
+         return <SidebarMtDiablo />;
+      case 'otherSites':
+        return <SidebarOtherSites />;
+      default:
+        return <SidebarMusselRock />
     }
   }
 
@@ -29,7 +38,11 @@ class Sidebar extends React.Component {
         { this.getLocationSpcificSidebarComponent() }
 
         <div className="bar-item bar-header top-space">This Website</div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdKOzls3V1ONWfs_pRnacV0f7MAlaS0wPgEaW9lHfu9HMOnew/viewform" className="bar-item format-button" target="_blank" rel="noreferrer">Help And Feedback</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdKOzls3V1ONWfs_pRnacV0f7MAlaS0wPgEaW9lHfu9HMOnew/viewform"
+            className="bar-item format-button"
+            target="_blank"
+            rel="noreferrer">Help And Feedback
+        </a>
 
       </div>
     );

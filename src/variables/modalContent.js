@@ -95,13 +95,22 @@ const modalContent = {
     additionalContent: ''
   },
 
+  oaklandSounding: {
+    type: 'image',
+    title: 'Oakland Sounding',
+    description: 'National Weather Service Sounding Page',
+    link: 'https://www.spc.noaa.gov/exper/sounding',
+    linkText: 'NOAA NWS Soundings',
+    visualContentUrl: 'http://topaflyers.com/weather/soundings/oak.png',
+    additionalContent: 'This is a modified skew-t from http://topaflyers.com'
+  },
   fogTodayforecast: {
     type: 'image',
     title: 'Fog forecast from fog.today',
     description: 'Satelite images and animations for the current fog conditions',
     link: 'https://fog.today/',
     linkText: 'Fog.today',
-    visualContentUrl: 'https://fog.today/current.jpg?cacheBuster=$CACHE_BUSTER$',
+    visualContentUrl: 'https://fog.today/current.jpg',
     additionalContent: ''
   },
   nwsBayAreaDiscission: {
@@ -132,6 +141,26 @@ const modalContent = {
     allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;',
     additionalContent: ''
   },
+  pacificaPierCam: {
+    type: 'iFrame',
+    title: 'Live Pacifica Pier',
+    description: 'Live Pacifica Pier Camera',
+    link: 'https://www.youtube.com/watch?v=zYi_5AF6B2A',
+    linkText: 'See the Pacifica Pier on Youtube',
+    visualContentUrl: 'https://www.youtube.com/embed/zYi_5AF6B2A',
+    allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;',
+    additionalContent: ''
+  },
+  moriPointCam: {
+    type: 'iFrame',
+    title: 'Live Mori Point Pacifica',
+    description: 'Live Mori Point Pacifica Camera',
+    link: 'https://www.youtube.com/embed/8gkxC22E-sY',
+    linkText: 'See the Mori Point camera on Youtube',
+    visualContentUrl: 'https://www.youtube.com/embed/8gkxC22E-sY',
+    allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;',
+    additionalContent: ''
+  },
   // tides
   tidesPacifica: {
     type: 'image',
@@ -151,6 +180,24 @@ const modalContent = {
     visualContentUrl: 'https://www.surf-forecast.com/tides/Bolinas-Lagoon-California.png?cacheBuster=$CACHE_BUSTER$',
     additionalContent: ''
   },
+  windSlammerMission: {
+    type: 'iFrame',
+    title: 'Mission Peak Live Weather',
+    description: 'Looking SW from Mission Peak',
+    link: 'http://windslammer.hang-gliding.com/WindSlammer/',
+    linkText: 'WindSlammer Mission Peak',
+    visualContentUrl: 'http://windslammer.hang-gliding.com/WindSlammer/',
+    additionalContent: ''
+  },
+  missionPeakLiveCam: {
+    type: 'iFrame',
+    title: 'Mission Peak Live Camera',
+    description: 'Looking up to mission peak',
+    link: 'http://missionpeak.axiscam.net:1920/view/view.shtml?id=5783&imagepath=%2Fmjpg%2Fvideo.mjpg&size=1&streamprofile=MJPEG_800x450_60comp_1fps',
+    linkText: 'Live Mission Peak camera',
+    visualContentUrl: 'http://missionpeak.axiscam.net:1920/view/view.shtml?id=5783&imagepath=%2Fmjpg%2Fvideo.mjpg&size=1&streamprofile=MJPEG_800x450_60comp_1fps',
+    additionalContent: ''
+  }
 }
 //<iframe width="560" height="315" src="https://www.youtube.com/embed/L6e1EEA-dQI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

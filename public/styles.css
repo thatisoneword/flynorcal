@@ -246,7 +246,7 @@ a:hover {
   padding: 20px;
   border: 2px solid #555;
   border-radius: 5px;
-  width: 80%;
+  width: 90%;
   background-color: #302d24;
   max-height: 80%;
   overflow: auto;
@@ -255,6 +255,9 @@ a:hover {
 }
 .modal-content.iFrame {
   height: 70%;
+}
+.modal-content iframe {
+  background-color: white;
 }
 .chart-content-inner {
   padding: 30px 5px 15px;
@@ -488,6 +491,6 @@ button, input, select, textarea, optgroup {
 }
 @media only screen and (min-width : 1000px) {
   .modal-content {
-    width: 800px
+    width: 800px;
   }
 }

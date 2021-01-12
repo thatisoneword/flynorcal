@@ -25,8 +25,10 @@ class SidebarContent extends React.Component {
   render() {
     return (
       <>
-        <div className="bar-item bar-header top-space" >Mussel Rock (The Dumps)</div>
+        <div className="bar-item bar-header top-space" >Live Cameras</div>
         <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.cheetahLauchCam)}>Cheetah Launch Live Cam</button>
+        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.pacificaPierCam)}>Pacifica Pier Live Cam</button>
+        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.moriPointCam)}>Mori Point Live Cam</button>
 
         <div className="bar-item bar-header top-space" >NWS Forecasts</div>
         <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.nwsMussel)}>Mussel Rock NWS</button>
@@ -36,6 +38,7 @@ class SidebarContent extends React.Component {
         {this.props.allStations && this.renderForcasts()}
 
         <div className="bar-item bar-header top-space">Other Forecasts</div>
+        <a href="http://weather.pacificaview.net/" className="bar-item format-button" target="_blank" rel="noreferrer">Sharp Park Station</a>
         <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.windyforecast)}>Windy.com</button>
         <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.fogTodayforecast)}>Fog Today</button>
         <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.tidesPacifica)}>Tides for Pacifica</button>

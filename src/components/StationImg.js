@@ -17,6 +17,11 @@ class StationImg extends React.Component {
     const dayBgStyleBottom = {backgroundImage: `url(${bottomImgPath})`};
     const dayBgStyleTop = {backgroundImage: `url(${topImgPath})`};
 
+    // if the stations modal content if it has it
+    const { modalContentObj } = this.props.allStations[this.props.stationId]
+    // if there is specific modal content use that else use the station as the modal data
+    const modalContent =  modalContentObj ?  modalContentObj : this.props.allStations[this.props.stationId];
+
 
     // The JSX is 3 stacked divs with background images.
     // outer-bg-image bottom div contains the night/backup image in case the other 2 don't load
@@ -32,7 +37,7 @@ class StationImg extends React.Component {
             <div
               className="inner-bg-image top"
               style={dayBgStyleTop}
-              onClick={() => this.props.setModalKey(this.props.allStations[this.props.stationId])}>
+              onClick={() => this.props.setModalKey(modalContent)}>
             </div>
           </>
         }

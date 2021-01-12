@@ -10,7 +10,8 @@ import Modal from './Modal';
 import utils from './utils';
 
 // TODO:
-// add main images for other flying sites
+// fill our rest of data
+// make photos alt photos for rest of data
 // banner messages
 
 class App extends React.Component {
@@ -44,7 +45,7 @@ class App extends React.Component {
     }
 
     ///// Turn it to day or night for development purposes //////
-    // this.props.setIsDaytimeAction(false); // true = day / false = night
+     this.props.setIsDaytimeAction(true); // true = day / false = night
   }
 
   setImgCacheBuster = () => {
