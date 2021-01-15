@@ -1,10 +1,6 @@
 // Add or remove stations from the list by modifying the stations object
 // visualContentUrl is optional use 'visualContentUrl: null' for no image
 // the station key and the stationId MUST be the same
-// const makeLink = urlAndTextArr => {
-//   let temp = <a href=${urlAndTextArr[0]}  target="_blank" rel="noreferrer">${urlAndTextArr[1]}</a>
-//   return temp;
-// }
 
 const moreWeedCameras = <div className="additonal-content">
   Additional views <a href="http://api.nvseismolab.org/camera/Axis-Weed1" target="_blank" rel="noreferrer" >Weed1</a

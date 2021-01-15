@@ -1,6 +1,11 @@
 // Add or remove stations from the list by modifying the stations object
 // visualContentUrl is optional use 'visualContentUrl: null' for no image
 // the station key and the stationId MUST be the same
+
+const moreDiabloCameras = <div className="additonal-content">
+  Additional view - <a href="http://api.nvseismolab.org/camera/Axis-GrizzlyPeakLookout2" target="_blank" rel="noreferrer" >Grizzly Peak Lookout</a>
+</div>;
+
 var stations = {
   'KCADANVI92': {
     stationId: 'KCADANVI92',
@@ -12,6 +17,7 @@ var stations = {
     visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-MtDiabloWest',
     modalContentObj: null,
     stationNightImg: 'ocean_beach1_sm.jpg',
+    additionalContent: moreDiabloCameras,
     stationStatsUpdateIntervalInSeconds: 301, // Seconds interval
   },
   'KCADANVI19': {
@@ -24,6 +30,7 @@ var stations = {
     visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-Diablo',
     modalContentObj: null,
     stationNightImg: 'ocean_beach1_sm.jpg',
+    additionalContent: moreDiabloCameras,
     stationStatsUpdateIntervalInSeconds: 301, // Seconds interval
   },
   'KCADANVI140': {
@@ -36,6 +43,7 @@ var stations = {
     visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-SRVFDStation31',
     modalContentObj: null,
     stationNightImg: 'ocean_beach1_sm.jpg',
+    additionalContent: moreDiabloCameras,
     stationStatsUpdateIntervalInSeconds: 301, // Seconds interval
   }
 }

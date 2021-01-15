@@ -47,7 +47,7 @@ class Modal extends React.Component {
         </iframe>
     }
     if (item.link && item.linkText) {
-      customLink = <div className="additonal-content">
+      customLink = <div className="sub-header-content">
         <a href={item.link} target="_blank" rel="noreferrer" >{item.linkText}</a>
       </div>;
     }
@@ -55,9 +55,10 @@ class Modal extends React.Component {
     return (
       <>
         <h3 className="modal-title">{item.title}</h3>
+        {customLink}
         <div className="modal-dynamic-container">
           {imgOrIframe}
-          {customLink}
+          {item.cameraViewText && <div className="camera-text">{item.cameraViewText}</div>}
           {item.additionalContent}
         </div>
       </>

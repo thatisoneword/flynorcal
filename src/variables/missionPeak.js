@@ -4,6 +4,10 @@ import modalContent from './modalContent';
 // visualContentUrl is optional use 'visualContentUrl: null' for no image
 // the station key and the stationId MUST be the same
 
+const moreMissionPeakCameras = <div className="additonal-content">
+  Additional view - <a href="http://api.nvseismolab.org/camera/Axis-Mission2" target="_blank" rel="noreferrer" >Mission Peak looking east</a>
+</div>;
+
 var stations = {
   'KCAFREMO33': {
     stationId: 'KCAFREMO33',
@@ -15,7 +19,9 @@ var stations = {
     visualContentUrlAlt: null,
     modalContentObj: modalContent.windSlammerMission,
     stationNightImg: 'ocean_beach1_sm.jpg',
-    stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
+    additionalContent: moreMissionPeakCameras,
+    cameraViewText: '',
+    stationStatsUpdateIntervalInSeconds: 250, // Seconds interval
   },
   'KCAFREMO121': {
     stationId: 'KCAFREMO121',
@@ -27,7 +33,9 @@ var stations = {
     visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-Mission1',
     modalContentObj: null,
     stationNightImg: 'ocean_beach1_sm.jpg',
-    stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
+    additionalContent: moreMissionPeakCameras,
+    cameraViewText: 'Looking SSW over Ed Levin park and San Jose.',
+    stationStatsUpdateIntervalInSeconds: 306, // Seconds interval
   },
   'KCASANJO489': {
     stationId: 'KCASANJO489',
@@ -39,7 +47,9 @@ var stations = {
     visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-SanJoseFoothills',
     modalContentObj: null,
     stationNightImg: 'ocean_beach1_sm.jpg',
-    stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
+    additionalContent: moreMissionPeakCameras,
+    cameraViewText: 'Looking west from the San Jose foothills.',
+    stationStatsUpdateIntervalInSeconds: 301, // Seconds interval
   },
   'KCASANJO384': {
     stationId: 'KCASANJO384',
@@ -51,6 +61,8 @@ var stations = {
     visualContentUrlAlt: null,
     modalContentObj: null,
     stationNightImg: 'ocean_beach1_sm.jpg',
+    additionalContent: moreMissionPeakCameras,
+    cameraViewText: 'Looking north west from the Lick Observatory.',
     stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
   }
 }

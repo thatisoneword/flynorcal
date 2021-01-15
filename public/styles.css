@@ -345,7 +345,10 @@ a:hover {
 
 h3.modal-title {
   margin-top: 3px;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
+}
+.sub-header-content {
+  margin-bottom: 20px
 }
 .close-modal-btn {
   display:inline-block;
@@ -356,6 +359,9 @@ h3.modal-title {
 .additonal-content {
   text-align: center;
   padding: 25px;
+}
+.camera-text {
+  padding-top: 10px;
 }
 
 /* small station history */

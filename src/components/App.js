@@ -11,9 +11,10 @@ import Modal from './Modal';
 import utils from './utils';
 
 // TODO:
-// fill our rest of data
-// make photos alt photos for rest of data
+// finish image location text
+// work on photos for night images
 // banner messages
+// main image no zoom but link Funston
 
 class App extends React.Component {
 
