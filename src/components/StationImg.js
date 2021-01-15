@@ -29,15 +29,16 @@ class StationImg extends React.Component {
     // is delayed by 2 seconds letting the top div load the new background before it is then given the
     // most recent cache buster. This prevents distracting flashing of the background image.
     return (
-      <div className="outer-bg-image" style={nightBgStyle}>
+      <div className="outer-bg-image"
+          onClick={() => this.props.setModalKey(modalContent)}
+          style={nightBgStyle}>
         {
           this.props.isDaytime &&
           <>
             <div className="inner-bg-image bottom" style={dayBgStyleBottom}></div>
             <div
               className="inner-bg-image top"
-              style={dayBgStyleTop}
-              onClick={() => this.props.setModalKey(modalContent)}>
+              style={dayBgStyleTop}>
             </div>
           </>
         }

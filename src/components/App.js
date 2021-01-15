@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import suncalc from 'suncalc'; // this does dawn/dusk, sunrise/sunset and other time calculations
 import { setImgCacheBuster, setImgCacheBusterDelayed, setIsDaytimeAction, toggleAppClasses } from '../actions';
 
+import LocationSelect from './LocationSelect';
 import Sidebar from './Sidebar';
 import MainImage from './MainImage';
 import AllStations from './AllStations';
@@ -59,15 +60,27 @@ class App extends React.Component {
     }
   }
 
+  handleSelectClick = (e) => {
+    e.stopPropagation()
+  }
+
   render() {
     return (
       <div className={utils.objectTruthyKeysToString(this.props.appClasses)}>
-        <Sidebar />
-        <div className="menu-button" onClick={() => this.props.toggleAppClasses('show-menu')}>☰</div>
-        <div id="alert-banner-container"></div>
-        <MainImage />
-        <AllStations />
-        <Modal />
+
+        <div className="inner-content">
+
+          <Sidebar />
+          <div className="menu-button" onClick={() => this.props.toggleAppClasses('show-menu')}>☰</div>
+          <MainImage />
+          <div className="site-select-container" onClick={(e) => this.handleSelectClick(e)}>
+            <LocationSelect />
+          </div>
+          <div className="alert-banner-container">hello banner<br /> hello<br />bye</div>
+          <AllStations />
+          <Modal />
+
+        </div>
       </div>
     );
   };

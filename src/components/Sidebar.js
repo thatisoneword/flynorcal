@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { toggleAppClasses} from '../actions';
-import LocationSelect from './LocationSelect';
 import SidebarMusselRock from './SidebarMusselRock';
 import SidebarMtTam from './SidebarMtTam';
 import SidebarMissionPeak from './SidebarMissionPeak';
@@ -32,8 +31,6 @@ class Sidebar extends React.Component {
       <div className="sidebar bar-block card animate-right" id="rightMenu">
 
         <button onClick={() => this.props.toggleAppClasses('show-menu')} className="bar-item format-button close-button close">&times;</button>
-
-        { this.showLocationSelect && <LocationSelect /> }
 
         { this.getLocationSpcificSidebarComponent() }
 

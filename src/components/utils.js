@@ -44,6 +44,23 @@ const checkCookie = (name) => {
 
 const expireCookie = (name) => document.cookie = `${name}=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;`;
 
+const renderForcastsForSidebar = (allStations) => {
+  const stationsArr = [];
+  for (const [key, val] of Object.entries(allStations)) {
+    stationsArr.push(
+      <a
+        href={val.wundergroundLink}
+        className="bar-item format-button"
+        target="_blank"
+        rel="noreferrer"
+        key={key}>
+        {val.title}
+      </a>
+    );
+  }
+  return stationsArr;
+}
+
 
 const utils = {
   objectTruthyKeysToString,
@@ -51,7 +68,8 @@ const utils = {
   setCookie,
   getCookie,
   checkCookie,
-  expireCookie
+  expireCookie,
+  renderForcastsForSidebar
 }
 
 export default utils

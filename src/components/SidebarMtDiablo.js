@@ -2,25 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setModalKey } from '../actions';
 import modalContent from '../variables/modalContent';
+import utils from './utils';
 
 class SidebarContent extends React.Component {
-
-  renderForcasts = () => {
-    const stationsArr = [];
-    for (const [key, val] of Object.entries(this.props.allStations)) {
-      stationsArr.push(
-        <a
-          href={val.wundergroundLink}
-          className="bar-item format-button"
-          target="_blank"
-          rel="noreferrer"
-          key={key}>
-          {val.title}
-        </a>
-      );
-    }
-    return stationsArr;
-  }
 
   render() {
     return (
@@ -30,10 +14,10 @@ class SidebarContent extends React.Component {
 
         <div className="bar-item bar-header top-space" >NWS Forecasts</div>
         <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.nwsMtDiablo)}>Mt. Diablo NWS</button>
-
+        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.oaklandSounding)}>Oakland Sounding</button>
 
         <div className="bar-item bar-header top-space">Wunderground Forecasts</div>
-        {this.props.allStations && this.renderForcasts()}
+        {this.props.allStations && utils.renderForcastsForSidebar(this.props.allStations)}
 
         <div className="bar-item bar-header top-space">Other Forecasts</div>
         <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.windyForcastMtDiablo)}>Windy.com</button>

@@ -23,7 +23,7 @@ const sitesGeneralInfo = {
   missionPeak: {
     name: 'missionPeak',
     title: 'Mission Peak',
-    mainImgUrl: null,
+    mainImgUrl: null,//'https://mthamilton.ucolick.org/hamcam/Cam1.ts.JPG',
     backupImg: './images/mission_peak_wide.jpg'
   },
   mtDiablo: {

@@ -104,6 +104,15 @@ const modalContent = {
     visualContentUrl: 'http://topaflyers.com/weather/soundings/oak.png',
     additionalContent: 'This is a modified skew-t from http://topaflyers.com'
   },
+  vandenbergSounding: {
+    type: 'image',
+    title: 'Vandenberg Sounding',
+    description: 'National Weather Service Sounding Page',
+    link: 'https://www.spc.noaa.gov/exper/sounding',
+    linkText: 'NOAA NWS Soundings',
+    visualContentUrl: 'http://topaflyers.com/weather/soundings/vbg.png',
+    additionalContent: 'This is a modified skew-t from http://topaflyers.com'
+  },
   fogTodayforecast: {
     type: 'image',
     title: 'Fog forecast from fog.today',
