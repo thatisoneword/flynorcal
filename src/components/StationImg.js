@@ -4,10 +4,18 @@ import { setImgCacheBusterDelayed, setModalKey } from '../actions';
 
 class StationImg extends React.Component {
 
+  launchModalOrLink = (modalContent, stationImgLinkedInsteadOfModal) => {
+    if (stationImgLinkedInsteadOfModal) {
+      window.open(stationImgLinkedInsteadOfModal);
+    } else {
+      this.props.setModalKey(modalContent);
+    }
+  }
+
   render() {
     if (!this.props.stationId) return;
 
-    const { visualContentUrl, stationNightImg } = this.props.allStations[this.props.stationId];
+    const { visualContentUrl, stationNightImg, stationImgLinkedInsteadOfModal } = this.props.allStations[this.props.stationId];
 
     const topImgPath = `${visualContentUrl}?random=${this.props.imgCacheBuster}`;
     const bottomImgPath = `${visualContentUrl}?random=${this.props.imgCacheBusterDelayed}`;
@@ -17,10 +25,11 @@ class StationImg extends React.Component {
     const dayBgStyleBottom = {backgroundImage: `url(${bottomImgPath})`};
     const dayBgStyleTop = {backgroundImage: `url(${topImgPath})`};
 
-    // if the stations modal content if it has it
+    // use the optional stations modal content if it has it, this would be a reference from
+    // the station object to the modal content object.
     const { modalContentObj } = this.props.allStations[this.props.stationId]
     // if there is specific modal content use that else use the station as the modal data
-    const modalContent =  modalContentObj ?  modalContentObj : this.props.allStations[this.props.stationId];
+    const modalContent =  modalContentObj ? modalContentObj : this.props.allStations[this.props.stationId];
 
 
     // The JSX is 3 stacked divs with background images.
@@ -30,7 +39,7 @@ class StationImg extends React.Component {
     // most recent cache buster. This prevents distracting flashing of the background image.
     return (
       <div className="outer-bg-image"
-          onClick={() => this.props.setModalKey(modalContent)}
+          onClick={() => this.launchModalOrLink(modalContent, stationImgLinkedInsteadOfModal)}
           style={nightBgStyle}>
         {
           this.props.isDaytime &&

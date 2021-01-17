@@ -1,4 +1,12 @@
 
+const morePacificaCameras = <div className="additional-content">
+  Additional views:
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=8gkxC22E-sY" target="_blank" rel="noreferrer" >Live Mori Point camera.</a></li>
+    <li><a href="https://www.youtube.com/watch?v=G_GvJqITbOM" target="_blank" rel="noreferrer" >Live Pacifica waterfront camera</a></li>
+  </ul>
+</div>;
+
 const modalContent = {
 
   // NWS forcasts
@@ -158,7 +166,8 @@ const modalContent = {
     linkText: 'See the Pacifica Pier on Youtube',
     visualContentUrl: 'https://www.youtube.com/embed/zYi_5AF6B2A',
     allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;',
-    additionalContent: ''
+    additionalContent: morePacificaCameras,
+    cameraViewText: 'Looking west to the Pacifica pier.',
   },
   moriPointCam: {
     type: 'iFrame',

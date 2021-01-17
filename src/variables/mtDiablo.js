@@ -2,8 +2,12 @@
 // visualContentUrl is optional use 'visualContentUrl: null' for no image
 // the station key and the stationId MUST be the same
 
-const moreDiabloCameras = <div className="additonal-content">
-  Additional view - <a href="http://api.nvseismolab.org/camera/Axis-GrizzlyPeakLookout2" target="_blank" rel="noreferrer" >Grizzly Peak Lookout</a>
+const moreDiabloCameras = <div className="additional-content">
+  Additional views:
+  <ul>
+    <li><a href="http://api.nvseismolab.org/camera/Axis-GrizzlyPeakLookout2" target="_blank" rel="noreferrer" >Grizzly Peak Lookout to the east</a></li>
+    <li><a href="http://api.nvseismolab.org/camera/Axis-GrizzlyPeakLookout1" target="_blank" rel="noreferrer" >Grizzly Peak Lookout to the west</a></li>
+  </ul>
 </div>;
 
 var stations = {
@@ -18,7 +22,8 @@ var stations = {
     modalContentObj: null,
     stationNightImg: 'ocean_beach1_sm.jpg',
     additionalContent: moreDiabloCameras,
-    stationStatsUpdateIntervalInSeconds: 301, // Seconds interval
+    cameraViewText: 'Mt. Diablo Peak looking south west.',
+    stationStatsUpdateIntervalInSeconds: 301 // Seconds interval
   },
   'KCADANVI19': {
     stationId: 'KCADANVI19',
@@ -26,12 +31,13 @@ var stations = {
     title: 'Diablo Highlands Country Estates',
     description: 'Danville, CA',
     wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/danville/KCADANVI19',
-    visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-Diablo',
-    visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-Diablo',
+    visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-SRVFDStation31',
+    visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-SRVFDStation31',
     modalContentObj: null,
     stationNightImg: 'ocean_beach1_sm.jpg',
     additionalContent: moreDiabloCameras,
-    stationStatsUpdateIntervalInSeconds: 301, // Seconds interval
+    cameraViewText: 'Looking north east to the base of Mt. Diablo from the San Ramon Valley Fire Station',
+    stationStatsUpdateIntervalInSeconds: 301 // Seconds interval
   },
   'KCADANVI140': {
     stationId: 'KCADANVI140',
@@ -39,12 +45,13 @@ var stations = {
     title: 'Danville Station',
     description: 'Danville, CA',
     wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/danville/KCADANVI140',
-    visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-SRVFDStation31',
-    visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-SRVFDStation31',
+    visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-Diablo',
+    visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-Diablo',
     modalContentObj: null,
     stationNightImg: 'ocean_beach1_sm.jpg',
     additionalContent: moreDiabloCameras,
-    stationStatsUpdateIntervalInSeconds: 301, // Seconds interval
+    cameraViewText: 'Looking west accross the peak of Mt. Diablo',
+    stationStatsUpdateIntervalInSeconds: 301 // Seconds interval
   }
 }
 

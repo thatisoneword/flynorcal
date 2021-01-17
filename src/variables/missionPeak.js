@@ -4,8 +4,12 @@ import modalContent from './modalContent';
 // visualContentUrl is optional use 'visualContentUrl: null' for no image
 // the station key and the stationId MUST be the same
 
-const moreMissionPeakCameras = <div className="additonal-content">
-  Additional view - <a href="http://api.nvseismolab.org/camera/Axis-Mission2" target="_blank" rel="noreferrer" >Mission Peak looking east</a>
+const moreMissionPeakCameras = <div className="additional-content">
+  Additional views:
+  <ul>
+    <li><a href="http://api.nvseismolab.org/camera/Axis-Mission2" target="_blank" rel="noreferrer" >Mission Peak looking east</a></li>
+    <li><a href="http://api.nvseismolab.org/camera/Axis-CupertinoHills" target="_blank" rel="noreferrer" >Cupertino Hills looking east</a></li>
+  </ul>
 </div>;
 
 var stations = {
@@ -17,7 +21,8 @@ var stations = {
     wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/fremont/KCAFREMO33',
     visualContentUrl: 'http://windslammer.hang-gliding.com/WindSlammer/snap.jpg',
     visualContentUrlAlt: null,
-    modalContentObj: modalContent.windSlammerMission,
+    modalContentObj: null,
+    stationImgLinkedInsteadOfModal: 'http://windslammer.hang-gliding.com/WindSlammer/', // optional so statio img open url
     stationNightImg: 'ocean_beach1_sm.jpg',
     additionalContent: moreMissionPeakCameras,
     cameraViewText: '',
@@ -48,7 +53,7 @@ var stations = {
     modalContentObj: null,
     stationNightImg: 'ocean_beach1_sm.jpg',
     additionalContent: moreMissionPeakCameras,
-    cameraViewText: 'Looking west from the San Jose foothills.',
+    cameraViewText: 'Looking south west from the San Jose foothills, just south of Alum Rock.',
     stationStatsUpdateIntervalInSeconds: 301, // Seconds interval
   },
   'KCASANJO384': {
@@ -57,12 +62,12 @@ var stations = {
     title: 'Evergreen, San Jose Ca.',
     description: 'Freemont, CA',
     wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/san-jose/KCASANJO384',
-    visualContentUrl: 'https://mthamilton.ucolick.org/hamcam/Cam1.ts.JPG',
+    visualContentUrl: 'http://mthamilton.ucolick.org/hamcam/Cam1.ts.JPG',
     visualContentUrlAlt: null,
     modalContentObj: null,
     stationNightImg: 'ocean_beach1_sm.jpg',
     additionalContent: moreMissionPeakCameras,
-    cameraViewText: 'Looking north west from the Lick Observatory.',
+    cameraViewText: 'Looking north west from Lick Observatory.',
     stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
   }
 }

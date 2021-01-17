@@ -18,20 +18,29 @@ class MainImage extends React.Component {
   useMainImage = null;
 
   renderMainImg = () => {
-    this.useMainImage = this.props.isDaytime && !!(this.props.flyingSite.mainImgUrl);
-
     if (this.useMainImage) {
-      return <img id="mainImg" src={`${this.props.flyingSite.mainImgUrl}?random=${this.props.imgCacheBuster}`} alt="Fort Funston" />;
+      return (
+        <img id="mainImg"
+        className={this.props.flyingSite.name}
+        src={`${this.props.flyingSite.mainImgUrl}?random=${this.props.imgCacheBuster}`}
+        alt="Fort Funston" />
+      );
     } else {
-      return <img id="backup-image" src={this.props.flyingSite.backupImg} alt="Mussel Rock" />;
+      return (
+        <img id="backup-image"
+          className={this.props.flyingSite.name} 
+          src={this.props.flyingSite.backupImg}
+          alt="Mussel Rock" />
+        );
     }
   }
 
   render() {
+    this.useMainImage = this.props.isDaytime && !!(this.props.flyingSite.mainImgUrl);
     return(
       <div id="main-img-and-message"
         onClick={() => this.zoomImage()}
-        className={!this.useMainImage ? 'useBackupImage' : ''}>
+        className={!(this.useMainImage) ? 'useBackupImage' : ''}>
         { this.renderMainImg() }
       </div>
     );

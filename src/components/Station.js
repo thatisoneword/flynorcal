@@ -32,7 +32,7 @@ class Station extends React.Component {
 
   renderStationTitle = () => {
     const { title, wundergroundLink } = this.props.allStations[this.stationId];
-    return <div className="station-title"><a href={wundergroundLink} target="_blank" rel="noreferrer">{title}</a></div>
+    return <div className="station-title"><a href={wundergroundLink} target="_blank" rel="noreferrer"><h2>{title}</h2></a></div>
   }
 
   // This makes the arrow behave more like a windsock when passing Due North
@@ -87,8 +87,8 @@ class Station extends React.Component {
     return(
       <>
         <div className="flex-item" id={this.stationId} key={this.stationId}>
-          <div className="station-container">
             {this.renderStationTitle()}
+          <div className="station-container">
             {this.renderStationStats()}
           </div>
             <StationHistory stationId={this.stationId} />

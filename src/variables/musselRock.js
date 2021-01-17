@@ -3,6 +3,8 @@ import modalContent from './modalContent';
 // Add or remove stations from the list by modifying the stations object
 // visualContentUrl is optional use 'visualContentUrl: null' for no image
 // the station key and the stationId MUST be the same
+
+
 var stations = {
   'KCAPACIF205': {
     stationId: 'KCAPACIF205',
@@ -14,7 +16,8 @@ var stations = {
     visualContentUrlAlt: null,
     modalContentObj: modalContent.pacificaPierCam,
     stationNightImg: 'ocean_beach1_sm.jpg',
-    cameraViewText: 'Looking west at the Pacifica pier.',
+    additionalContent: null,
+    cameraViewText: 'Looking west to the Pacifica pier.',
     stationStatsUpdateIntervalInSeconds: 201, // Seconds interval
   },
   'KCADALYC1': {
@@ -26,6 +29,7 @@ var stations = {
     visualContentUrl: 'https://icons.wunderground.com/webcamramdisk/b/a/barenjager/5/current.jpg',
     visualContentUrlAlt: null,
     stationNightImg: 'mussel_shane_sm.jpg',
+    additionalContent: null,
     cameraViewText: 'Looking south toward Pedro Point from Longview Drive in Pacifica.',
     stationStatsUpdateIntervalInSeconds: 62 // Seconds interval
   },
@@ -38,6 +42,7 @@ var stations = {
     visualContentUrl: 'https://icons.wunderground.com/webcamramdisk/b/a/barenjager/8/current.jpg',
     visualContentUrlAlt: null,
     stationNightImg: 'mussel1_sm.jpg',
+    additionalContent: null,
     cameraViewText: 'Looking north west over Mussel Rock bowl.',
     stationStatsUpdateIntervalInSeconds: 203, // Seconds interval
   },
@@ -50,6 +55,7 @@ var stations = {
     visualContentUrl: 'http://www.flyfunston.org/newwebcam/ropes1wslarge.jpg',
     visualContentUrlAlt: null,
     stationNightImg: 'funston1_sm.jpg',
+    additionalContent: null,
     cameraViewText: 'Looking north west over Fort Funston launch.',
     stationStatsUpdateIntervalInSeconds: 207, // Seconds interval
   },
@@ -62,7 +68,8 @@ var stations = {
     visualContentUrl: 'http://www.oceanbeach.org/images/sunset.jpg',
     visualContentUrlAlt: null,
     stationNightImg: 'ocean_beach1_sm.jpg',
-    cameraViewText: 'Looking north west for the Lick Observatory.',
+    additionalContent: null,
+    cameraViewText: 'Looking north west past the Cliffhouse to Marin.',
     stationStatsUpdateIntervalInSeconds: 301, // Seconds interval
   }
 }

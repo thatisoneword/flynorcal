@@ -20,6 +20,9 @@ a:hover {
   -webkit-user-select: none;
   min-height: 110px;
 }
+#mainImg.musselRock {
+  margin-top: -220px;
+}
 .main-image-zoomed #mainImg,
 .main-image-zoomed #backup-image {
   width: unset;
@@ -60,9 +63,15 @@ a:hover {
   margin-top: -18px;
 }
 .station-title {
-  padding-bottom:23px;
+  padding: 10px 0 10px;
+  margin-top: 7px;
+}
+.station-title h2 {
+  font-weight: 500;
+  margin: 0;
   font-size: 20px;
 }
+
 .station-speed-gust {
   font-size: 56px;
   color: #e3e2e1;
@@ -98,16 +107,21 @@ a:hover {
   background-size: 350px;
   background-repeat: no-repeat;
   background-position: 80% 10%;
+  transition: background-size .6s ease-in-out;
 }
+
 .inner-bg-image.top {
   cursor: pointer;
+}
+.inner-bg-image.top:hover {
+  background-size: 370px;
 }
 .inner-item-history {
   margin-top: 47px;
   height: 82px; /* stop it from jumping on refresh */
   padding: 5px 16px 0;
 }
-.inner-item-history:hover {
+.inner-item-history:hover, .station-title:hover {
   background-color: #1f1d17;
 }
 .last-updated {
@@ -243,7 +257,7 @@ a:hover {
 .modal-content {
   background-color: #fefefe;
   margin: auto;
-  padding: 20px;
+  padding: 20px 20px 25px 20px;
   border: 2px solid #555;
   border-radius: 5px;
   width: 90%;
@@ -294,7 +308,7 @@ a:hover {
   vertical-align: middle;
   max-height: 90%;
 }
-#modal-content-inner {
+.modal-content-inner {
   width: 96%;
   margin: auto;
   background-image: url("../images/loaderDuck.gif");
@@ -304,8 +318,11 @@ a:hover {
   min-height: 300px;
   height: 94%;
 }
+.modal-content-loaded .modal-content-inner {
+  background-image: unset;
+}
 .modal-dynamic-container iFrame {
-  height: 92%;
+  height: 80%;
   min-width: 250px;
   width: 100%;
   resize: both;
@@ -344,8 +361,8 @@ a:hover {
 
 
 h3.modal-title {
-  margin-top: 3px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 14px;
 }
 .sub-header-content {
   margin-bottom: 20px
@@ -356,12 +373,25 @@ h3.modal-title {
   padding: 0 8px;
   background-blend-mode: darken;
 }
-.additonal-content {
-  text-align: center;
-  padding: 25px;
+.additional-content {
+  text-align: left;
+  padding-top: 25px;
+  line-height: 25px;
+}
+.additional-content ul {
+    list-style-type: circle;
+    margin-block-start: .3em;
+    margin-block-end: .5em;
+    padding-inline-start: 20px;
+}
+.additional-content a{
+  margin-left: 20px;
+}
+.additional-content li a{
+  margin-left: 0;
 }
 .camera-text {
-  padding-top: 10px;
+  padding-top: 7px;
 }
 
 /* small station history */

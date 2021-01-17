@@ -5,6 +5,11 @@ import ReactDOM from 'react-dom';
 import HighChart from './HighChart';
 
 class Modal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state={ contentLoaded: false }
+    this.loadedRef = React.createRef();
+  }
 
   // Minimum requirements to launch a modal are an object that contain:
   // type: 'image', 'iFrame', 'chart', 'station'
@@ -17,6 +22,16 @@ class Modal extends React.Component {
   // linkText: string
   // additionalContent: string
   // stationId: string, this is just for charts
+
+  componentDidUpdate() {
+    if (this.loadedRef.current) {
+      this.loadedRef.current.addEventListener('load', this.setContentLoaded);
+    }
+  }
+
+  setContentLoaded = () => {
+    if (!this.state.contentLoaded) this.setState({ contentLoaded: true })
+  }
 
   renderModal = () => {
 
@@ -32,6 +47,7 @@ class Modal extends React.Component {
     if (item.type === 'image' || item.type === 'station') {
       imgOrIframe = <a className="modal-img-link" href={`${item.visualContentUrlAlt || item.visualContentUrl}?cache=${this.props.imgCacheBuster}`} rel="noreferrer" target="_blank">
         <img
+          ref={this.loadedRef}
           height="100%"
           src={`${item.visualContentUrlAlt || item.visualContentUrl}?cache=${this.props.imgCacheBuster}`}
           alt={item.title}/>
@@ -39,7 +55,8 @@ class Modal extends React.Component {
     }
     if (item.type === 'iFrame') {
       imgOrIframe = <iframe
-          src={`${item.visualContentUrl}?cache=${this.props.imgCacheBuster}`}
+          src={`${item.visualContentUrl}?cache='none'`}
+          ref={this.loadedRef}
           allow={item.allow ? item.allow : ''}
           title={item.title}
           frameBorder="0"
@@ -72,9 +89,10 @@ class Modal extends React.Component {
 
     return ReactDOM.createPortal(
       <div className="modal" onClick={() => this.props.setModalKey(null)}>
-        <div className={`modal-content ${modal.type}`} onClick={(e) => e.stopPropagation()}>
+        <div className={`modal-content ${modal.type} ${this.state.contentLoaded ? 'modal-content-loaded': 'error-loading-content'}`}
+              onClick={(e) => e.stopPropagation()}>
           <span className="close close-modal-btn" onClick={() => this.props.setModalKey(null)}>&times;</span>
-          <div id="modal-content-inner">
+          <div className="modal-content-inner">
             {modal.type === 'chart' ? <HighChart stationId={modal.stationId} /> : this.renderModal()}
           </div>
         </div>

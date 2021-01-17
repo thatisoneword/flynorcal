@@ -10,7 +10,7 @@ class SidebarContent extends React.Component {
     return (
       <>
         <div className="bar-item bar-header top-space" >Mt Diablo Information</div>
-        <a href="https://wingsofrogallo.org/mt-diablo/" className="bar-item format-button" target="_blank" rel="noreferrer">WOR</a>
+        <a href="https://wingsofrogallo.org/mt-diablo/" className="bar-item format-button" target="_blank" rel="noreferrer">Wings Of Rogallo</a>
 
         <div className="bar-item bar-header top-space" >NWS Forecasts</div>
         <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.nwsMtDiablo)}>Mt. Diablo NWS</button>

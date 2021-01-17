@@ -2,8 +2,12 @@
 // visualContentUrl is optional use 'visualContentUrl: null' for no image
 // the station key and the stationId MUST be the same
 
-const moreTamCameras = <div className="additonal-content">
-  Additional view <a href="http://api.nvseismolab.org/camera/Axis-TamEast" target="_blank" rel="noreferrer" >Mt Tam looking east</a>
+const moreTamCameras = <div className="additional-content">
+  Additional views:
+  <ul>
+    <li><a href="http://api.nvseismolab.org/camera/Axis-TamEast" target="_blank" rel="noreferrer" >Mt Tam looking east</a></li>
+    <li><a href="http://api.nvseismolab.org/camera/Axis-BarnabeEast" target="_blank" rel="noreferrer" >Mt Barnaby looking east</a></li>
+  </ul>
 </div>;
 
 var stations = {

@@ -513,7 +513,7 @@ function openModal(modalContentKey, stationId) {
     imgOrIframe = `<iframe src="${item.imgOrIframeSrc}" frameborder="0"></iframe>`
   }
   if (item.link && item.linkText) {
-    customLink = `<div class="additonal-content">
+    customLink = `<div class="additional-content">
       <a href="${item.link}" target="_blank" >${item.linkText}</a>
     </div>`;
   }
