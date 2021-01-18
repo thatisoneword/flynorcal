@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { toggleAppClasses } from '../actions';
+import './MainImage.css';
 
 class MainImage extends React.Component {
 
@@ -28,7 +29,7 @@ class MainImage extends React.Component {
     } else {
       return (
         <img id="backup-image"
-          className={this.props.flyingSite.name} 
+          className={this.props.flyingSite.name}
           src={this.props.flyingSite.backupImg}
           alt="Mussel Rock" />
         );

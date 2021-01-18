@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { setModalKey } from '../actions';
 import ReactDOM from 'react-dom';
 import HighChart from './HighChart';
+import './Modal.css'
 
 class Modal extends React.Component {
   constructor(props) {
@@ -71,8 +72,10 @@ class Modal extends React.Component {
 
     return (
       <>
-        <h3 className="modal-title">{item.title}</h3>
-        {customLink}
+        <div className="title-link-container">
+          <h3 className="modal-title">{item.title}</h3>
+          {customLink}
+        </div>
         <div className="modal-dynamic-container">
           {imgOrIframe}
           {item.cameraViewText && <div className="camera-text">{item.cameraViewText}</div>}

@@ -1,0 +1,123 @@
+/* #main-img-and-message {
+  position: relative;
+}
+.main-image-zoomed #main-img-and-message {
+  overflow-x: scroll;
+} */
+/*
+#main-img-and-message.show-camera-message #mainImg,
+#main-img-and-message.useBackupImage #mainImg {
+  display: none;
+}
+#main-img-and-message.show-camera-message #backup-image,
+#main-img-and-message.useBackupImage #backup-image {
+  display: block;
+}
+
+#backup-image {
+  display: none;
+} */
+
+
+/* #main-img-and-message:hover .title-container {
+  opacity: .5;
+} */
+/* this is banner stuff I think */
+/* .title-container {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  opacity: .6;
+  font-size: 13px;
+  padding: 10px 10px 10px 10px;
+  background-color: black;
+  opacity: 0;
+  transition: 0.9s;
+}
+#camera-message-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-width: 250px;
+}
+.camera-message {
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  color: #fff;
+  margin: auto;
+  width: 50%;
+  background-color: #888;
+  opacity: .6;
+  border-radius: 8px;
+  margin-top: 10px;
+} */
+
+.alert-banner-outer {
+  /* position: absolute; */
+  /* top: 0; */
+  width: 100%;
+  min-width: 250px;
+  text-align: center;
+
+  padding-top: 5px;
+}
+.alert-banner-outer.grey .alert-banner-inner {
+  color: #bbb8b8;
+}
+.alert-banner-inner {
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  margin: auto;
+  width: 50%;
+  border-radius: 8px;
+  margin-top: 10px;
+  padding: 0 15px 15px;
+  position: relative;
+}
+.red,
+.danger {
+  background-color: #d9534f;
+}
+.yellow,
+.warning {
+  background-color: #f0ad4e;
+}
+.green,
+.success {
+  background-color: #5cb85c;
+}
+.blue,
+.primary {
+  background-color: #5bc0de;
+}
+.black,
+.dark {
+  background-color: #1f1d17;
+}
+.grey {
+  background-color: #302d24;
+}
+
+.error-or-no-data.outer-arrow-container {
+  height: 100px;
+  font-size:20px;
+  line-height:30px;
+  padding-top:30px;
+}
+
+.close-banner {
+  padding-left: 10px;
+  line-height: 12px;
+  color: #fff;
+}
+.close-banner:hover {
+  color: #aaa
+}
+
+.alert-banner-container {
+  padding: 10px 20px;
+  margin-top: -4px;
+  width: 100%;
+}

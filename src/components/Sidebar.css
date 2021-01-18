@@ -1,0 +1,67 @@
+
+.card {
+  box-shadow: 0 2px 5px 0 rgba(60,60,60,0.6), 0 2px 10px 0 rgba(100,100,100,0.6);
+}
+.sidebar {
+  height: 100%;
+  width: 275px;
+  right: -285px;
+  position: fixed!important;
+  z-index: 4;
+  overflow: hidden;
+  padding-bottom: 20px;
+  -webkit-transition: 300ms ease;
+  -moz-transition: 300ms ease;
+  -o-transition: 300ms ease;
+  transition: 300ms ease;
+  overflow-y: auto;
+  background-color: #1f1d17;
+}
+.show-menu .sidebar {
+  right: 0;
+}
+.format-button {
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.format-button:hover {
+  color: #000;
+  background-color: #ccc;
+}
+.bar-block .bar-item {
+    width: 100%;
+    display: block;
+    padding: 6px 14px 6px 40px;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0;
+}
+.bar-item.top-space {
+  padding-top: 25px;
+}
+.bar-block .bar-header {
+  font-weight: 600;
+  padding-left: 22px;
+}
+.close-button.format-button {
+  text-align: right;
+  padding-right: 20px;
+  border-bottom: 2px solid #1f1d17;
+
+}
+.close-button.format-button:hover {
+  color: #fff;
+  background-color: #1f1d17;
+  border-bottom: 2px solid #555;
+}

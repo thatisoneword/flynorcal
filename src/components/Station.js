@@ -4,6 +4,7 @@ import { getCurrentStationData } from '../actions';
 import StationImg from './StationImg';
 import StationHistory from './StationHistory';
 import utils from './utils';
+import './Station.css';
 // import funston1_sm from '../images/funston1_sm.jpg';
 // import mussel_shane_sm from '../images/mussel_shane_sm.jpg';
 

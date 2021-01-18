@@ -292,3 +292,24 @@ makeHighchart(stationId) {
       }
 
   }
+
+
+
+  http://api.nvseismolab.org/camera/Axis-HerdPeak
+  http://api.nvseismolab.org/thumbnail/Axis-HerdPeak
+
+  http://api.nvseismolab.org/thumbnail/Axis-Mission1
+
+  http://api.nvseismolab.org/thumbnail/Axis-MtVaca5
+  http://api.nvseismolab.org/thumbnail/Axis-MtVaca8
+
+  http://api.nvseismolab.org/thumbnail/Axis-Diablo
+  http://api.nvseismolab.org/thumbnail/Axis-MtDiabloWest
+
+  http://api.nvseismolab.org/thumbnail/Axis-TamWest
+
+  http://api.nvseismolab.org/thumbnail/Axis-Slide
+
+  http://api.nvseismolab.org/camera/Axis-BlackMtnMarin
+
+  http://api.nvseismolab.org/camera/Axis-SanJoseFoothills

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import suncalc from 'suncalc'; // this does dawn/dusk, sunrise/sunset and other time calculations
 import { setImgCacheBuster, setImgCacheBusterDelayed, setIsDaytimeAction, toggleAppClasses } from '../actions';
+import './App.css';
 
 import LocationSelect from './LocationSelect';
 import Sidebar from './Sidebar';
@@ -9,9 +10,9 @@ import MainImage from './MainImage';
 import AllStations from './AllStations';
 import Modal from './Modal';
 import utils from './utils';
+import AlertBanner from './AlertBanner';
 
 // TODO:
-// finish image location text
 // work on photos for night images
 // banner messages
 // main image no zoom but link Funston
@@ -47,7 +48,7 @@ class App extends React.Component {
     }
 
     ///// Turn it to day or night for development purposes //////
-     this.props.setIsDaytimeAction(true); // true = day / false = night
+    //this.props.setIsDaytimeAction(false); // true = day / false = night
   }
 
   setImgCacheBuster = () => {
@@ -77,7 +78,7 @@ class App extends React.Component {
           <div className="site-select-container" onClick={(e) => this.handleSelectClick(e)}>
             <LocationSelect />
           </div>
-          <div className="alert-banner-container">hello banner<br /> hello<br />bye</div>
+          <AlertBanner />
           <AllStations />
           <Modal />
 

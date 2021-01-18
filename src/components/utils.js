@@ -1,3 +1,4 @@
+import './Sidebar.css';
 
 const objectTruthyKeysToString = (obj) => {
   let classArr = [];

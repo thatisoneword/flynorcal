@@ -1,0 +1,16 @@
+mainImg {
+  cursor: zoom-in;
+}
+#mainImg, #backup-image {
+  width: 100%;
+  -webkit-user-select: none;
+  min-height: 110px;
+}
+#mainImg.musselRock {
+  margin-top: -220px;
+}
+.main-image-zoomed #mainImg,
+.main-image-zoomed #backup-image {
+  width: unset;
+  cursor: zoom-out;
+}

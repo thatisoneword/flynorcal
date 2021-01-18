@@ -1,4 +1,3 @@
-import modalContent from './modalContent';
 
 // Add or remove stations from the list by modifying the stations object
 // visualContentUrl is optional use 'visualContentUrl: null' for no image

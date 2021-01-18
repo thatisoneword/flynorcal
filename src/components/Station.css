@@ -1,0 +1,112 @@
+.flex-item {
+  position: relative;
+  text-align: center;
+  background-color: #302d24;
+  height: 543px;
+  width: 350px;
+  margin-bottom: 15px;
+}
+.station-container {
+  padding: 18px 15px 0;
+}
+.arrow-container {
+  border: #82817f 4px solid;
+  width:150px;
+  height:150px;
+  border-radius: 100px;
+  margin: auto;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  -ms-transition: -ms-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+}
+.svgArrow {
+  fill: white;
+  transform: rotate(90deg);
+  margin-top: -18px;
+}
+.station-title {
+  padding: 10px 0 10px;
+  margin-top: 7px;
+}
+.station-title h2 {
+  font-weight: 500;
+  margin: 0;
+  font-size: 20px;
+}
+
+.station-speed-gust {
+  font-size: 56px;
+  color: #e3e2e1;
+  margin-top: -130px;
+  margin-left: -5px;
+}
+.station-gust {
+  font-size: 30px;
+}
+.station-temp {
+  position: absolute;
+  right: 25px;
+}
+.inner-item {
+  font-size: 16px;
+  margin-top: 50px;
+}
+.outer-bg-image {
+  position: relative;
+  height: 195px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: 350px;
+  background-position: 80% 10%;
+}
+.inner-bg-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-size: 350px;
+  background-repeat: no-repeat;
+  background-position: 80% 10%;
+  transition: background-size .6s ease-in-out;
+}
+
+.inner-bg-image.top {
+  cursor: pointer;
+}
+.inner-bg-image.top:hover {
+  background-size: 370px;
+}
+.history-small-container {
+  cursor: pointer;
+}
+
+.history-small-row {
+  display: flex;
+  justify-content: space-between;
+}
+.history-small-row.time-range {
+  padding-top: 3px;
+}
+.history-small-item {
+  flex-direction: row;
+  text-align: center;
+}
+.deemphisized-text {
+  font-size: 13px;
+  color: #bfbfbf;
+}
+.inner-item-history {
+  margin-top: 47px;
+  height: 82px; /* stop it from jumping on refresh */
+  padding: 5px 16px 0;
+}
+.inner-item-history:hover, .station-title:hover {
+  background-color: #1f1d17;
+}
+.last-updated {
+  margin: 8px 10px;
+  font-size: 15px;
+  color: #afafaf;
+}

@@ -1,0 +1,95 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  margin: 0px;
+  background: #1f1d17;
+  /* padding: 0; */
+}
+a, a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  color: #efefef
+}
+* {
+  box-sizing: border-box;
+}
+
+button, [type=button], [type=reset], [type=submit] {
+  -webkit-appearance: button;
+}
+
+button, select {
+  text-transform: none;
+}
+button, input {
+  overflow: visible;
+}
+button, input, select, textarea, optgroup {
+  font-weight: 200;
+  font: inherit;
+}
+.inner-content {
+  position: relative;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+.menu-button {
+  position: absolute;
+  right: 13px;
+  top: 12px;
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0 15px 6px;
+  opacity: .5;
+  border-radius: 100px;
+  background-color: #222;
+  /* background: radial-gradient(circle, #000 100%, rgba(0, 0, 0, 1.0) 10  0%); */
+}
+.menu-button:hover {
+  opacity: 1;
+}
+.site-select-container {
+  position: absolute;
+  z-index: 1;
+  left: 15px;
+  top: 15px;
+  background-color: rgba(0, 0, 0, .5);
+  padding: 15px;
+  border-radius: 5px;
+}
+.site-select-container:hover {
+  background-color: #222;
+}
+.change-location {
+  width: 220px;
+  text-align: right;
+}
+.change-location select{
+  width: 100%;
+  margin-top: 10px;
+  padding: 3px;
+  background-color: #ccc;
+  font-weight: 100;
+  border-radius: 7px;
+}
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}

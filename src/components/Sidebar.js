@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { toggleAppClasses} from '../actions';
+import './Sidebar.css';
 import SidebarMusselRock from './SidebarMusselRock';
 import SidebarMtTam from './SidebarMtTam';
 import SidebarMissionPeak from './SidebarMissionPeak';
 import SidebarMtDiablo from './SidebarMtDiablo';
 import SidebarOtherSites from './SidebarOtherSites';
+
 
 class Sidebar extends React.Component {
 
