@@ -23,7 +23,7 @@ class selectLocation extends React.Component {
               <option value='mtTam'>Mt. Tam</option>
               <option value='missionPeak'>Mission Peak</option>
               <option value='mtDiablo'>Mt. Diablo</option>
-              <option value='otherSites'>Other Sites</option>
+              <option value='otherSites'>Other Flying Sites</option>
             </select>
           </label>
         </form>

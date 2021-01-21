@@ -8,8 +8,11 @@ import './Modal.css'
 class Modal extends React.Component {
   constructor(props) {
     super(props);
-    this.state={ contentLoaded: false }
+    this.state={ contentLoaded: false, modalStyleHeight: null }
     this.loadedRef = React.createRef();
+    this.modalRef = React.createRef();
+    this.modalContentContainerRef = React.createRef();
+    this.modalContentInnerRef = React.createRef();
   }
 
   // Minimum requirements to launch a modal are an object that contain:
@@ -27,11 +30,30 @@ class Modal extends React.Component {
   componentDidUpdate() {
     if (this.loadedRef.current) {
       this.loadedRef.current.addEventListener('load', this.setContentLoaded);
+
     }
   }
 
+  // modalStyleHeight = 444;
+
+  // modalContentLoaded = () => {
+  //   console.log('The model Content loaded callback');
+  // }
+
   setContentLoaded = () => {
-    if (!this.state.contentLoaded) this.setState({ contentLoaded: true })
+    if (!this.state.contentLoaded) {
+      // this is to get rid of the loader once the content is loaded, because
+      // the modal is resizable you can still see the loding image
+      this.setState({ contentLoaded: true });
+
+      // this is becase the dynamic content in the modal was not triggering the
+      // scroll bars so we add a modal style height and that fixes it
+      const innerHeight = this.modalContentInnerRef.current.clientHeight;
+      const outerHeight = this.modalContentContainerRef.current.clientHeight
+      if (innerHeight >= outerHeight) {
+        this.setState({ modalStyleHeight: outerHeight }); // triggers scroll
+      }
+    }
   }
 
   renderModal = () => {
@@ -91,11 +113,14 @@ class Modal extends React.Component {
     const modal = this.props.modalKey;
 
     return ReactDOM.createPortal(
-      <div className="modal" onClick={() => this.props.setModalKey(null)}>
-        <div className={`modal-content ${modal.type} ${this.state.contentLoaded ? 'modal-content-loaded': 'error-loading-content'}`}
-              onClick={(e) => e.stopPropagation()}>
+      <div ref={this.modalRef} className="modal" onClick={() => this.props.setModalKey(null)}>
+        <div
+            style={ this.state.modalStyleHeight ? { height: `${this.state.modalStyleHeight}px` } : {} }
+            ref={this.modalContentContainerRef}
+            className={`modal-content ${modal.type} ${this.state.contentLoaded ? 'modal-content-loaded': 'error-loading-content'}`}
+            onClick={(e) => e.stopPropagation()}>
           <span className="close close-modal-btn" onClick={() => this.props.setModalKey(null)}>&times;</span>
-          <div className="modal-content-inner">
+          <div ref={this.modalContentInnerRef} className="modal-content-inner">
             {modal.type === 'chart' ? <HighChart stationId={modal.stationId} /> : this.renderModal()}
           </div>
         </div>

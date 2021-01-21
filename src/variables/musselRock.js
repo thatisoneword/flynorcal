@@ -1,8 +1,17 @@
-import modalContent from './modalContent';
 
+import modalContent from './modalContent';
 // Add or remove stations from the list by modifying the stations object
 // visualContentUrl is optional use 'visualContentUrl: null' for no image
 // the station key and the stationId MUST be the same
+
+const morePacificaCameras = <div className="additional-content">
+  Additional views:
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=L6e1EEA-dQI" target="_blank" rel="noreferrer" >Cheetah launch camera.</a></li>
+    <li><a href="https://www.youtube.com/watch?v=8gkxC22E-sY" target="_blank" rel="noreferrer" >Live Mori Point camera.</a></li>
+    <li><a href="https://www.youtube.com/watch?v=G_GvJqITbOM" target="_blank" rel="noreferrer" >Live Pacifica waterfront camera</a></li>
+  </ul>
+</div>;
 
 
 var stations = {
@@ -15,7 +24,7 @@ var stations = {
     visualContentUrl: 'https://www.mixdivr.org/livecam/pier_image_small.jpg',
     visualContentUrlAlt: null,
     modalContentObj: modalContent.pacificaPierCam,
-    stationNightImg: 'ocean_beach1_sm.jpg',
+    stationNightImg: 'https://i.ytimg.com/vi/zYi_5AF6B2A/mqdefault.jpg',
     additionalContent: null,
     cameraViewText: 'Looking west to the Pacifica pier.',
     stationStatsUpdateIntervalInSeconds: 201, // Seconds interval
@@ -29,7 +38,7 @@ var stations = {
     visualContentUrl: 'https://icons.wunderground.com/webcamramdisk/b/a/barenjager/5/current.jpg',
     visualContentUrlAlt: null,
     stationNightImg: 'mussel_shane_sm.jpg',
-    additionalContent: null,
+    additionalContent: morePacificaCameras,
     cameraViewText: 'Looking south toward Pedro Point from Longview Drive in Pacifica.',
     stationStatsUpdateIntervalInSeconds: 62 // Seconds interval
   },
@@ -42,7 +51,7 @@ var stations = {
     visualContentUrl: 'https://icons.wunderground.com/webcamramdisk/b/a/barenjager/8/current.jpg',
     visualContentUrlAlt: null,
     stationNightImg: 'mussel1_sm.jpg',
-    additionalContent: null,
+    additionalContent: morePacificaCameras,
     cameraViewText: 'Looking north west over Mussel Rock bowl.',
     stationStatsUpdateIntervalInSeconds: 203, // Seconds interval
   },
@@ -55,7 +64,7 @@ var stations = {
     visualContentUrl: 'http://www.flyfunston.org/newwebcam/ropes1wslarge.jpg',
     visualContentUrlAlt: null,
     stationNightImg: 'funston1_sm.jpg',
-    additionalContent: null,
+    additionalContent: morePacificaCameras,
     cameraViewText: 'Looking north west over Fort Funston launch.',
     stationStatsUpdateIntervalInSeconds: 207, // Seconds interval
   },
@@ -68,7 +77,7 @@ var stations = {
     visualContentUrl: 'http://www.oceanbeach.org/images/sunset.jpg',
     visualContentUrlAlt: null,
     stationNightImg: 'ocean_beach1_sm.jpg',
-    additionalContent: null,
+    additionalContent: morePacificaCameras,
     cameraViewText: 'Looking north west past the Cliffhouse to Marin.',
     stationStatsUpdateIntervalInSeconds: 301, // Seconds interval
   }

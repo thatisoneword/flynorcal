@@ -12,6 +12,10 @@ class StationImg extends React.Component {
     }
   }
 
+  getPathOrUrl = (theImg) => {
+    return theImg.search('http') !== -1 ? theImg : `${process.env.PUBLIC_URL}/images/${theImg}`;
+  }
+
   render() {
     if (!this.props.stationId) return;
 
@@ -19,7 +23,7 @@ class StationImg extends React.Component {
 
     const topImgPath = `${visualContentUrl}?random=${this.props.imgCacheBuster}`;
     const bottomImgPath = `${visualContentUrl}?random=${this.props.imgCacheBusterDelayed}`;
-    const stationNightImgPath = `${process.env.PUBLIC_URL}/images/${stationNightImg}`;
+    const stationNightImgPath = this.getPathOrUrl(stationNightImg);
 
     const nightBgStyle = {backgroundImage: `url(${stationNightImgPath})`};
     const dayBgStyleBottom = {backgroundImage: `url(${bottomImgPath})`};

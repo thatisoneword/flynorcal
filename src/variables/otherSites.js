@@ -1,3 +1,5 @@
+import modalContent from './modalContent';
+
 // Add or remove stations from the list by modifying the stations object
 // visualContentUrl is optional use 'visualContentUrl: null' for no image
 // the station key and the stationId MUST be the same
@@ -19,7 +21,7 @@ const moreVacaCameras = <div className="additional-content">
   Additional views:
   <ul>
     <li><a href="http://api.nvseismolab.org/camera/Axis-MtVaca5" target="_blank" rel="noreferrer" >Mt. Vaca looking SSW</a></li>
-    <li><a href="http://api.nvseismolab.org/camera/Axis-Atlas" target="_blank" rel="noreferrer" >Atlas Peak looking south east to Mt. Vaca</a></li>
+    <li><a href="http://api.nvseismolab.org/camera/Axis-Atlas" target="_blank" rel="noreferrer" >Atlas Peak occasionally the view changes</a></li>
   </ul>
 </div>;
 
@@ -35,6 +37,20 @@ var stations = {
     stationNightImg: 'ocean_beach1_sm.jpg',
     additionalContent: moreVacaCameras,
     cameraViewText: 'Mt Vaca looking north east.',
+    stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
+  },
+  'KCABENIC65': {
+    stationId: 'KCABENIC65',
+    type: 'station',
+    title: 'Channing Hill',
+    description: 'Granada Heights, Benicia, CA',
+    wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/benicia/KCABENIC65',
+    visualContentUrl: 'https://i.ytimg.com/vi/P9SEtKcJik8/mqdefault.jpg',
+    visualContentUrlAlt: null,
+    modalContentObj: modalContent.channingHillCam,
+    stationNightImg: 'https://i.ytimg.com/vi/P9SEtKcJik8/mqdefault.jpg',
+    additionalContent: '',
+    cameraViewText: 'null',
     stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
   },
   'KCAWEED23': {
@@ -63,12 +79,12 @@ var stations = {
     cameraViewText: 'Sites Ca. looking west to Snow and St. John Mountains',
     stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
   },
-  'KCATOLLH22': {
-    stationId: 'KCATOLLH22',
+  'KCAAUBER10': {
+    stationId: 'KCAAUBER10',
     type: 'station',
-    title: 'Tollhouse',
+    title: 'Above Tollhouse (Auberry Stn.)',
     description: 'Tollhouse, CA',
-    wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/tollhouse/KCATOLLH22',
+    wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/auberry/KCAAUBER10',
     visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-RoundMtnFresno',
     visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-RoundMtnFresno',
     stationNightImg: 'ocean_beach1_sm.jpg',

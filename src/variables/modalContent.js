@@ -2,6 +2,7 @@
 const morePacificaCameras = <div className="additional-content">
   Additional views:
   <ul>
+    <li><a href="https://www.youtube.com/watch?v=L6e1EEA-dQI" target="_blank" rel="noreferrer" >Cheetah launch camera.</a></li>
     <li><a href="https://www.youtube.com/watch?v=8gkxC22E-sY" target="_blank" rel="noreferrer" >Live Mori Point camera.</a></li>
     <li><a href="https://www.youtube.com/watch?v=G_GvJqITbOM" target="_blank" rel="noreferrer" >Live Pacifica waterfront camera</a></li>
   </ul>
@@ -62,6 +63,53 @@ const modalContent = {
     link: 'https://forecast.weather.gov/MapClick.php?lat=37.8816&lon=-121.9146&smap=1&unit=0&lg=en&FcstType=graphical',
     linkText: 'National Weather Servise page for Mount Diablo',
     visualContentUrl: 'https://forecast.weather.gov/meteograms/Plotter.php?lat=37.8816&lon=-121.9146&wfo=MTR&zcode=CAZ507&gset=18&gdiff=3&unit=0&tinfo=PY8&ahour=0&pcmd=11011111000000100000000000000000000000000000000000000000000&lg=en&indu=1!1!1!&dd=&bw=&hrspan=48&pqpfhr=6&psnwhr=6',
+    additionalContent: ''
+  },
+
+
+  nwsHerdWhaleback: {
+    type: 'image',
+    title: 'NWS 2 day forecast for Herd Peak and Whaleback',
+    description: 'National Weather Service 2 day forecast for Herd Peak and Whaleback',
+    link: 'https://forecast.weather.gov/MapClick.php?w0=t&w1=td&w2=wc&w3=sfcwind&w3u=1&w4=sky&w5=pop&w6=rh&w7=rain&w13u=0&w16u=1&w17u=1&AheadHour=0&Submit=Submit&FcstType=graphical&textField1=41.4994&textField2=-122.3697&site=all&unit=0&dd=&bw=',
+    linkText: 'National Weather Servise page for Herd Peak and Whaleback',
+    visualContentUrl: 'https://forecast.weather.gov/meteograms/Plotter.php?lat=41.4994&lon=-122.3697&wfo=MFR&zcode=CAZ081&gset=18&gdiff=3&unit=0&tinfo=PY8&ahour=0&pcmd=11011111100000000000000000000000000000000000000000000000000&lg=en&indu=1!1!1!&dd=&bw=&hrspan=48&pqpfhr=6&psnwhr=6',
+    additionalContent: ''
+  },
+  nwsMtVaca: {
+    type: 'image',
+    title: 'NWS 2 day forecast for Mt. Vaca',
+    description: 'National Weather Service 2 day forecast for Mt. Vaca',
+    link: 'https://forecast.weather.gov/MapClick.php?w0=t&w1=td&w2=wc&w3=sfcwind&w3u=1&w4=sky&w5=pop&w6=rh&w7=rain&w13u=0&w15u=1&AheadHour=0&Submit=Submit&FcstType=graphical&textField1=38.337&textField2=-121.953&site=all&unit=0&dd=&bw=',
+    linkText: 'National Weather Servise page for Mount Vaca',
+    visualContentUrl: 'https://forecast.weather.gov/meteograms/Plotter.php?lat=38.337&lon=-121.953&wfo=STO&zcode=CAZ017&gset=18&gdiff=3&unit=0&tinfo=PY8&ahour=0&pcmd=11011111100000000000000000000000000000000000000000000000000&lg=en&indu=1!1!1!&dd=&bw=&hrspan=48&pqpfhr=6&psnwhr=6',
+    additionalContent: ''
+  },
+  nwsChanning: {
+    type: 'image',
+    title: 'NWS 2 day forecast for Channing Hill',
+    description: 'National Weather Service 2 day forecast for Channing Hill',
+    link: 'https://forecast.weather.gov/MapClick.php?w0=t&w1=td&w2=wc&w3=sfcwind&w3u=1&w4=sky&w5=pop&w6=rh&w7=rain&w13u=0&w15u=1&AheadHour=0&Submit=Submit&FcstType=graphical&textField1=38.0545&textField2=-122.1572&site=all&unit=0&dd=&bw=',
+    linkText: 'National Weather Servise page for Channing Hill',
+    visualContentUrl: 'https://forecast.weather.gov/meteograms/Plotter.php?lat=38.0545&lon=-122.1572&wfo=STO&zcode=CAZ018&gset=18&gdiff=3&unit=0&tinfo=PY8&ahour=0&pcmd=11011111100000000000000000000000000000000000000000000000000&lg=en&indu=1!1!1!&dd=&bw=&hrspan=48&pqpfhr=6&psnwhr=6',
+    additionalContent: ''
+  },
+  nwsPotato: {
+    type: 'image',
+    title: 'NWS 2 day forecast for Potato Hill',
+    description: 'National Weather Service 2 day forecast for Potato Hill',
+    link: 'https://forecast.weather.gov/MapClick.php?w0=t&w1=td&w2=wc&w3=sfcwind&w3u=1&w4=sky&w5=pop&w6=rh&w7=rain&w13u=0&w15u=1&AheadHour=0&Submit=Submit&FcstType=graphical&textField1=39.3066&textField2=-122.5166&site=all&unit=0&dd=&bw=',
+    linkText: 'National Weather Servise page for Potato Hill',
+    visualContentUrl: 'https://forecast.weather.gov/meteograms/Plotter.php?lat=39.3066&lon=-122.5166&wfo=STO&zcode=CAZ063&gset=18&gdiff=3&unit=0&tinfo=PY8&ahour=0&pcmd=11011111100000000000000000000000000000000000000000000000000&lg=en&indu=1!1!1!&dd=&bw=&hrspan=48&pqpfhr=6&psnwhr=6',
+    additionalContent: ''
+  },
+  nwsTollhouse: {
+    type: 'image',
+    title: 'NWS 2 day forecast for Tollhouse',
+    description: 'National Weather Service 2 day forecast for Tollhouse',
+    link: 'https://forecast.weather.gov/MapClick.php?w0=t&w1=td&w2=wc&w3=sfcwind&w3u=1&w4=sky&w5=pop&w6=rh&w7=rain&AheadHour=0&Submit=Submit&FcstType=graphical&textField1=36.9659&textField2=-119.306&site=all&unit=0&dd=&bw=al',
+    linkText: 'National Weather Servise page for Tollhouse',
+    visualContentUrl: 'https://forecast.weather.gov/meteograms/Plotter.php?lat=36.9659&lon=-119.306&wfo=HNX&zcode=CAZ190&gset=15&gdiff=5&unit=0&tinfo=PY8&ahour=0&pcmd=11011111100000000000000000000000000000000000000000000000000&lg=en&indu=1!1!1!&dd=&bw=&hrspan=48&pqpfhr=6&psnwhr=6',
     additionalContent: ''
   },
 
@@ -157,6 +205,17 @@ const modalContent = {
     visualContentUrl: 'https://www.youtube.com/embed/L6e1EEA-dQI',
     allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;',
     additionalContent: ''
+  },
+  channingHillCam: {
+    type: 'iFrame',
+    title: 'Channing Hill Live',
+    description: 'Live Channing Hill, Benicia Ca. Camera',
+    link: 'https://www.youtube.com/watch?v=P9SEtKcJik8',
+    linkText: 'See Channing Hill live on Youtube',
+    visualContentUrl: 'https://www.youtube.com/embed/P9SEtKcJik8',
+    allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;',
+    additionalContent: null,
+    cameraViewText: 'Channing Hill, Benicia Ca.',
   },
   pacificaPierCam: {
     type: 'iFrame',

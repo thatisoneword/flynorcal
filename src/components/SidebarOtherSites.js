@@ -13,8 +13,11 @@ class SidebarContent extends React.Component {
         <a href="http://api.nvseismolab.org/camera/Axis-Weed2" className="bar-item format-button" target="_blank" rel="noreferrer">Moving Weed Camera</a>
 
         <div className="bar-item bar-header top-space" >NWS Forecasts</div>
-        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.nwsMtTam)}>Mt. Tam NWS</button>
-        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.nwsStinsonBeach)}>Stinson Beach NWS</button>
+        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.nwsMtVaca)}>Mt. Vaca NWS</button>
+        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.nwsChanning)}>Channing Hill NWS</button>
+        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.nwsHerdWhaleback)}>Whaleback/Herd Peak NWS</button>
+        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.nwsPotato)}>Potato Hill NWS</button>
+        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.nwsTollhouse)}>Tollhouse NWS</button>
 
         <div className="bar-item bar-header top-space">Wunderground Forecasts</div>
         {this.props.allStations && utils.renderForcastsForSidebar(this.props.allStations)}
@@ -23,9 +26,13 @@ class SidebarContent extends React.Component {
         <a href="https://www.ndbc.noaa.gov/station_page.php?station=46092" className="bar-item format-button" target="_blank" rel="noreferrer">Monterey Buoy</a>
         <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.windyForcastMtTam)}>Windy.com</button>
         <a href="https://www.star.nesdis.noaa.gov/goes/sector_band.php?sat=G17&sector=wus&band=GEOCOLOR&length=24" className="bar-item format-button" target="_blank" rel="noreferrer">Geos West loop</a>
-        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.fogTodayforecast)}>Fog Today</button>
-        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.tidesStinson)}>Tides Stinson Beach</button>
-        <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.nwsBayAreaDiscission)}>NWS Area Forcast Discussion</button>
+
+
+        <a href="https://forecast.weather.gov/product.php?site=NWS&issuedby=mtr&product=AFD&format=CI&glossary=1" className="bar-item format-button" target="_blank" rel="noreferrer">Bay Area NWS Forcast Discussion</a>
+        <a href="https://forecast.weather.gov/product.php?site=STO&issuedby=STO&product=AFD&format=CI&version=1&glossary=1" className="bar-item format-button" target="_blank" rel="noreferrer">Sacramento NWS Forcast Discussion</a>
+        <a href="https://forecast.weather.gov/product.php?site=MFR&issuedby=MFR&product=AFD&format=CI&version=1&glossary=1" className="bar-item format-button" target="_blank" rel="noreferrer">Medford Or. NWS Forcast Discussion</a>
+        <a href="https://forecast.weather.gov/product.php?site=HNX&issuedby=HNX&product=AFD&format=CI&version=1&glossary=1" className="bar-item format-button" target="_blank" rel="noreferrer">San Joaquin Valley NWS Forcast Discussion</a>
+
         <a href="https://www.purpleair.com/map?opt=1/mAQI/a10/cC0#6.79/40.088/-122.853" className="bar-item format-button" target="_blank" rel="noreferrer">Purple Air</a>
 
         <div className="bar-item bar-header top-space">Other Resources</div>

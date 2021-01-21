@@ -47,6 +47,12 @@
   position: absolute;
   right: 25px;
 }
+.error-or-no-data.outer-arrow-container {
+  height: 119px;
+  font-size:20px;
+  line-height:30px;
+  padding-top:30px;
+}
 .inner-item {
   font-size: 16px;
   margin-top: 50px;

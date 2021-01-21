@@ -89,23 +89,13 @@
   height: 92%;
   overflow: auto;
 }
-@media only screen and (max-height : 900px) {
-  .modal-content {
-    /* height: 600px; */
-    /* max-height: 600px; */
-  }
-  .modal-dynamic-container {
-    overflow-y: scroll;
-  }
-}
-
 
 h3.modal-title {
   margin-top: 5px;
   margin-bottom: 14px;
 }
 .sub-header-content {
-  marclogin-bottom: 20px
+  margin-bottom: 20px
 }
 .close-modal-btn {
   display:inline-block;
@@ -141,9 +131,20 @@ h3.modal-title {
     backround: unset;
   }
 }
+@media only screen and (max-height : 1000px) {
+  .modal-content {
+    /* height: 600px; */
+    /* max-height: 600px; */
+  }
+  .modal-dynamic-container {
+    /* overflow-y: scroll; */
+  }
+}
+
 @media only screen and (min-width : 1000px) {
   .modal-content {
     width: 800px;
+    /* height: 80% */
   }
   .site-select-container, .menu-button {
     position: fixed;
