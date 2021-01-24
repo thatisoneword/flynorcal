@@ -29,7 +29,7 @@ class StationHistory extends React.Component {
       let rotateStyles = {transform: `rotate(${item.winddirAvg}deg)`};
 
       const arrow = <svg height="15" width="15" style={rotateStyles}>
-        <title>From ${item.winddirAvg} degrees</title>
+        <title>From {item.winddirAvg} degrees</title>
         <polygon points="7,0 12,15 3,15" style={{fill: "#bfbfbf"}} />
       </svg>;
 

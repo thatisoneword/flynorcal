@@ -9,7 +9,7 @@ class SidebarContent extends React.Component {
   render() {
     return (
       <>
-        <div className="bar-item bar-header top-space" >Live Cameras</div>
+        <div className="bar-item bar-header" >Live Cameras</div>
         <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.cheetahLauchCam)}>Cheetah Launch Live Cam</button>
         <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.pacificaPierCam)}>Pacifica Pier Live Cam</button>
         <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.moriPointCam)}>Mori Point Live Cam</button>

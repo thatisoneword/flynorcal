@@ -2,6 +2,20 @@ import getCurrentForcast from '../apis/axiosGetStationData';
 import utils from '../components/utils';
 // import { stations } from '../variables/stations';
 
+export const addBannerMessage = (msgObj) => {
+  return {
+    type: 'ADD_BANNER_MESSAGE',
+    payload: msgObj
+  };
+}
+
+export const setNightMessageHasBeenSeen = (nightMessageSeenFlag) => {
+  return {
+    type: 'NIGHT_MESSAGE_HAS_BEEN_SEEN',
+    payload: nightMessageSeenFlag
+  };
+}
+
 export const toggleAppClasses = (classToToggle) => {
   return {
     type: 'TOGGLE_APP_CLASSES',

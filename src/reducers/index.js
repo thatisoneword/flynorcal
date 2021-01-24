@@ -1,44 +1,12 @@
 import { combineReducers } from 'redux';
-//import stations from '../variables/stations';
 import utils from '../components/utils';
 import musselRock from '../variables/musselRock';
 import mtTam from '../variables/mtTam';
 import missionPeak from '../variables/missionPeak';
 import mtDiablo from '../variables/mtDiablo';
 import otherSites from '../variables/otherSites';
-
-const sitesGeneralInfo = {
-  musselRock: {
-    name: 'musselRock',
-    title: 'Mussel Rock (The Dumps)',
-    mainImgUrl: 'http://www.flyfunston.org/newwebcam/panolarge.jpg',
-    backupImg: './images/mussel1.jpg'
-  },
-  mtTam: {
-    name: 'mtTam',
-    title: 'Mt. Tam',
-    mainImgUrl: null,
-    backupImg: './images/tam_from_OB.jpg'
-  },
-  missionPeak: {
-    name: 'missionPeak',
-    title: 'Mission Peak',
-    mainImgUrl: null,//'https://mthamilton.ucolick.org/hamcam/Cam1.ts.JPG',
-    backupImg: './images/mission_peak_wide.jpg'
-  },
-  mtDiablo: {
-    name: 'mtDiablo',
-    title: 'Mt. Diablo',
-    mainImgUrl: null,
-    backupImg: './images/mount_diablo_panoramic.jpg'
-  },
-  otherSites: {
-    name: 'otherSites',
-    title: 'Other Flying Sites',
-    mainImgUrl: null,
-    backupImg: './images/shasta_lg.jpg'
-  }
-}
+import bannerMessages from '../variables/bannerMessages';
+import sitesGeneralInfo from '../variables/sitesGeneralInfo';
 
 const combineStations = {
   musselRock,
@@ -59,7 +27,26 @@ const INITIAL_STATE = {
   appClasses: {},
   modalKey: '',
   flyingSite: 'musselRock',
+  nightMessageHasBeenSeen: false,
   error: null
+}
+
+export const bannerMessageReducer = (state = bannerMessages, action) => {
+  switch (action.type) {
+  case 'ADD_BANNER_MESSAGE':
+    return [action.payload, ...state];
+  default:
+    return state;
+  }
+}
+
+export const nightMessageHasBeenSeenReducer = (state = INITIAL_STATE.nightMessageHasBeenSeen, action) => {
+  switch (action.type) {
+  case 'NIGHT_MESSAGE_HAS_BEEN_SEEN':
+     return action.payload
+  default:
+    return state;
+  }
 }
 
 const getFlyingSiteNameFromCookie = () => {
@@ -71,7 +58,8 @@ const getFlyingSiteNameFromCookie = () => {
   } else if (!!combineStations[flyingSite] && !!sitesGeneralInfo[flyingSite] ) {
     return flyingSite;
   } else {
-    // either the cookie is not found or there is no date for the key in the objects above
+    // either the cookie is not found or there is no data for the key in the
+    // flying site specific data objects so return the default flying site.
     return INITIAL_STATE.flyingSite;
   }
 }
@@ -165,14 +153,6 @@ export const isDaytimeReducer = (state = INITIAL_STATE.isDaytime, action) => {
   }
 }
 
-export const errorReducer = (state = INITIAL_STATE.error, action) => {
-  const { error } = action;
-  if (error) {
-    return error;
-  }
-  return state;
-}
-
 export default combineReducers({
   allStations: stationReducer,
   currentForcasts: currentForcastReducer,
@@ -184,5 +164,6 @@ export default combineReducers({
   appClasses: toggleAppClassesReducer,
   modalKey: modalKeyReducer,
   flyingSite: flyingSiteReducer,
-  error: errorReducer
+  bannerMessages: bannerMessageReducer,
+  nightMessageHasBeenSeen: nightMessageHasBeenSeenReducer
 });

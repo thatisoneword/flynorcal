@@ -8,6 +8,7 @@ mainImg {
 }
 #mainImg.musselRock {
   margin-top: -220px;
+  min-height: 330px;
 }
 .main-image-zoomed #mainImg,
 .main-image-zoomed #backup-image {

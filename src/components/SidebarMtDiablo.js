@@ -9,7 +9,7 @@ class SidebarContent extends React.Component {
   render() {
     return (
       <>
-        <div className="bar-item bar-header top-space" >Mt Diablo Information</div>
+        <div className="bar-item bar-header" >Mt Diablo Information</div>
         <a href="https://wingsofrogallo.org/mt-diablo/" className="bar-item format-button" target="_blank" rel="noreferrer">Wings Of Rogallo</a>
 
         <div className="bar-item bar-header top-space" >NWS Forecasts</div>

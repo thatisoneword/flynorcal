@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import suncalc from 'suncalc'; // this does dawn/dusk, sunrise/sunset and other time calculations
-import { setImgCacheBuster, setImgCacheBusterDelayed, setIsDaytimeAction, toggleAppClasses } from '../actions';
 import './App.css';
 
 import LocationSelect from './LocationSelect';
@@ -11,11 +10,20 @@ import AllStations from './AllStations';
 import Modal from './Modal';
 import utils from './utils';
 import AlertBanner from './AlertBanner';
+import { nightMessage } from '../variables/bannerMessages';
+
+import { setImgCacheBuster,
+          setImgCacheBusterDelayed,
+          setIsDaytimeAction,
+          toggleAppClasses,
+          setNightMessageHasBeenSeen,
+          addBannerMessage } from '../actions';
 
 // TODO:
 // work on photos for night images
 // banner messages
 // main image no zoom but link Funston
+// move night images into src
 
 class App extends React.Component {
 
@@ -49,6 +57,12 @@ class App extends React.Component {
 
     ///// Turn it to day or night for development purposes //////
     //this.props.setIsDaytimeAction(false); // true = day / false = night
+
+    if ( !this.props.isDaytime && !this.props.nightMessageHasBeenSeen ) {
+      this.props.setNightMessageHasBeenSeen(true);
+      this.props.addBannerMessage(nightMessage);
+    }
+
   }
 
   setImgCacheBuster = () => {
@@ -94,8 +108,9 @@ const mapStateToProps = (state) => {
     imgCacheBuster: state.imgCacheBuster,
     dawnDusk: state.sunriseSunset,
     isDaytime: state.isDaytime,
+    nightMessageHasBeenSeen: state.nightMessageHasBeenSeen,
     appClasses: state.appClasses
   }
 }
 
-export default connect(mapStateToProps, { setImgCacheBuster, setImgCacheBusterDelayed, setIsDaytimeAction, toggleAppClasses })(App);
+export default connect(mapStateToProps, { setImgCacheBuster, setImgCacheBusterDelayed, setIsDaytimeAction, toggleAppClasses, setNightMessageHasBeenSeen, addBannerMessage })(App);

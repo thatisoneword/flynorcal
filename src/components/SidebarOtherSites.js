@@ -9,7 +9,7 @@ class SidebarContent extends React.Component {
   render() {
     return (
       <>
-        <div className="bar-item bar-header top-space" >Other Views</div>
+        <div className="bar-item bar-header" >Other Views</div>
         <a href="http://api.nvseismolab.org/camera/Axis-Weed2" className="bar-item format-button" target="_blank" rel="noreferrer">Moving Weed Camera</a>
 
         <div className="bar-item bar-header top-space" >NWS Forecasts</div>

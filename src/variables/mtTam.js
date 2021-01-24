@@ -11,18 +11,31 @@ const moreTamCameras = <div className="additional-content">
 </div>;
 
 var stations = {
-  'KCAMILLV30': {
-    stationId: 'KCAMILLV30',
+  'KCAMILLV52': {
+    stationId: 'KCAMILLV52',
     type: 'station',
-    title: 'Mt Tamalpais / 777 ft.',
+    title: 'West Point Inn - Mt Tamalpais',
     description: 'Mill Valley, CA',
-    wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/mill-valley/KCAMILLV30',
+    wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/mill-valley/KCAMILLV52',
     visualContentUrl: 'http://www.sheltons.net/wx/webcam800.jpg',
     visualContentUrlAlt: null,
     stationNightImg: 'mike_tam_sm.jpg',
     additionalContent: moreTamCameras,
     cameraViewText: 'Looking west from Tiburon.',
     stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
+  },
+  'KCAMILLV30': {
+    stationId: 'KCAMILLV30',
+    type: 'station',
+    title: 'Mt Tamalpais - 777 ft.',
+    description: 'Mill Valley, CA',
+    wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/mill-valley/KCAMILLV30',
+    visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-TamWest',
+    visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-TamWest',
+    stationNightImg: 'ocean_beach1_sm.jpg',
+    additionalContent: moreTamCameras,
+    cameraViewText: 'Looking NNW over the back of Mt. Tamalpais.',
+    stationStatsUpdateIntervalInSeconds: 291, // Seconds interval
   },
   'KCASAUSA58': {
     stationId: 'KCASAUSA58',
@@ -37,19 +50,19 @@ var stations = {
     cameraViewText: 'Looking north from Muir Beach.',
     stationStatsUpdateIntervalInSeconds: 207, // Seconds interval
   },
-  'KCAMILLV87': {
-    stationId: 'KCAMILLV87',
-    type: 'station',
-    title: 'Mt. Home Inn',
-    description: 'Bert\'s station near Moutain Home Inn on Panorama',
-    wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/san-francisco/KCASANFR1683',
-    visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-TamWest',
-    visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-TamWest',
-    stationNightImg: 'ocean_beach1_sm.jpg',
-    additionalContent: moreTamCameras,
-    cameraViewText: 'Looking NNW over the back of Mt. Tamalpais.',
-    stationStatsUpdateIntervalInSeconds: 215, // Seconds interval
-  },
+  // 'KCAMILLV87': {
+  //   stationId: 'KCAMILLV87',
+  //   type: 'station',
+  //   title: 'Mt. Home Inn',
+  //   description: 'Bert\'s station near Moutain Home Inn on Panorama',
+  //   wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/san-francisco/KCASANFR1683',
+  //   visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-TamWest',
+  //   visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-TamWest',
+  //   stationNightImg: 'ocean_beach1_sm.jpg',
+  //   additionalContent: moreTamCameras,
+  //   cameraViewText: 'Looking NNW over the back of Mt. Tamalpais.',
+  //   stationStatsUpdateIntervalInSeconds: 215, // Seconds interval
+  // },
   'KCASTINS13': {
     stationId: 'KCASTINS13',
     type: 'station',
