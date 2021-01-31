@@ -15,25 +15,25 @@ const sitesGeneralInfo = {
     name: 'mtTam',
     title: 'Mt. Tam',
     mainImgUrl: null,
-    backupImg: './images/tam_from_OB.jpg'
+    backupImg: mtTamBackup
   },
   missionPeak: {
     name: 'missionPeak',
     title: 'Mission Peak',
     mainImgUrl: null,//'https://mthamilton.ucolick.org/hamcam/Cam1.ts.JPG',
-    backupImg: './images/mission_peak_wide.jpg'
+    backupImg: missionPeakBackup
   },
   mtDiablo: {
     name: 'mtDiablo',
     title: 'Mt. Diablo',
     mainImgUrl: null,
-    backupImg: './images/mount_diablo_panoramic.jpg'
+    backupImg: mtDiabloBackup
   },
   otherSites: {
     name: 'otherSites',
     title: 'Other Flying Sites',
     mainImgUrl: null,
-    backupImg: './images/shasta_lg.jpg'
+    backupImg: otherSitesBackup
   }
 }
 
