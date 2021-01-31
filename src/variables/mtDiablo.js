@@ -1,3 +1,7 @@
+import diablo1Thumb from '../images/Axis-Diablo-thumb.jpg';
+import diabloWestThumb from '../images/Axis-MtDiabloWest-thumb.jpg';
+import SRVFDThumb from '../images/Axis-SRVFDStation31-thumb.jpg';
+
 // Add or remove stations from the list by modifying the stations object
 // visualContentUrl is optional use 'visualContentUrl: null' for no image
 // the station key and the stationId MUST be the same
@@ -20,7 +24,7 @@ var stations = {
     visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-MtDiabloWest',
     visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-MtDiabloWest',
     modalContentObj: null,
-    stationNightImg: 'ocean_beach1_sm.jpg',
+    stationNightImg: diabloWestThumb,
     additionalContent: moreDiabloCameras,
     cameraViewText: 'Mt. Diablo Peak looking south west.',
     stationStatsUpdateIntervalInSeconds: 301 // Seconds interval
@@ -34,7 +38,7 @@ var stations = {
     visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-SRVFDStation31',
     visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-SRVFDStation31',
     modalContentObj: null,
-    stationNightImg: 'ocean_beach1_sm.jpg',
+    stationNightImg: SRVFDThumb,
     additionalContent: moreDiabloCameras,
     cameraViewText: 'Looking north east to the base of Mt. Diablo from the San Ramon Valley Fire Station',
     stationStatsUpdateIntervalInSeconds: 301 // Seconds interval
@@ -48,7 +52,7 @@ var stations = {
     visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-Diablo',
     visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-Diablo',
     modalContentObj: null,
-    stationNightImg: 'ocean_beach1_sm.jpg',
+    stationNightImg: diablo1Thumb,
     additionalContent: moreDiabloCameras,
     cameraViewText: 'Looking west accross the peak of Mt. Diablo',
     stationStatsUpdateIntervalInSeconds: 301 // Seconds interval

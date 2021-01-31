@@ -1,4 +1,7 @@
-
+import mission1Thumb from '../images/Axis-Mission1-thumb.jpg';
+import mission2Thumb from '../images/Axis-Mission2-thumb.jpg';
+import sanJoseFoothillsThumb from '../images/Axis-SanJoseFoothills-thumb.jpg';
+import mtHamiltonThumb from '../images/mt_hamilton_cam2_thumb.jpg';
 // Add or remove stations from the list by modifying the stations object
 // visualContentUrl is optional use 'visualContentUrl: null' for no image
 // the station key and the stationId MUST be the same
@@ -22,7 +25,7 @@ var stations = {
     visualContentUrlAlt: null,
     modalContentObj: null,
     stationImgLinkedInsteadOfModal: 'http://windslammer.hang-gliding.com/WindSlammer/', // optional so statio img open url
-    stationNightImg: 'ocean_beach1_sm.jpg',
+    stationNightImg: mission2Thumb,
     additionalContent: moreMissionPeakCameras,
     cameraViewText: '',
     stationStatsUpdateIntervalInSeconds: 250, // Seconds interval
@@ -36,7 +39,7 @@ var stations = {
     visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-Mission1',
     visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-Mission1',
     modalContentObj: null,
-    stationNightImg: 'ocean_beach1_sm.jpg',
+    stationNightImg: mission1Thumb,
     additionalContent: moreMissionPeakCameras,
     cameraViewText: 'Looking SSW over Ed Levin park and San Jose.',
     stationStatsUpdateIntervalInSeconds: 306, // Seconds interval
@@ -50,7 +53,7 @@ var stations = {
     visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-SanJoseFoothills',
     visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-SanJoseFoothills',
     modalContentObj: null,
-    stationNightImg: 'ocean_beach1_sm.jpg',
+    stationNightImg: sanJoseFoothillsThumb,
     additionalContent: moreMissionPeakCameras,
     cameraViewText: 'Looking south west from the San Jose foothills, just south of Alum Rock.',
     stationStatsUpdateIntervalInSeconds: 301, // Seconds interval
@@ -64,7 +67,7 @@ var stations = {
     visualContentUrl: 'http://mthamilton.ucolick.org/hamcam/Cam1.ts.JPG',
     visualContentUrlAlt: null,
     modalContentObj: null,
-    stationNightImg: 'ocean_beach1_sm.jpg',
+    stationNightImg: mtHamiltonThumb,
     additionalContent: moreMissionPeakCameras,
     cameraViewText: 'Looking north west from Lick Observatory.',
     stationStatsUpdateIntervalInSeconds: 303, // Seconds interval

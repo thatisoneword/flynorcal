@@ -1,4 +1,9 @@
 import modalContent from './modalContent';
+import vacaThumb from '../images/Axis-MtVaca8-thumb.jpg';
+import potatoThumb from '../images/Axis-Sites1-thumb.jpg';
+import tollhouseThumb from '../images/Axis-RoundMtnFresno-thumb.jpg';
+import herdPeakThumb from '../images/shastina-to-herd-peak-thumb.jpg';
+import channingThumb from '../images/channingThumb.jpg';
 
 // Add or remove stations from the list by modifying the stations object
 // visualContentUrl is optional use 'visualContentUrl: null' for no image
@@ -34,7 +39,7 @@ var stations = {
     wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/vacaville/KCAVACAV89',
     visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-MtVaca8',
     visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-MtVaca8',
-    stationNightImg: 'ocean_beach1_sm.jpg',
+    stationNightImg: vacaThumb,
     additionalContent: moreVacaCameras,
     cameraViewText: 'Mt Vaca looking north east.',
     stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
@@ -48,7 +53,7 @@ var stations = {
     visualContentUrl: 'https://i.ytimg.com/vi/P9SEtKcJik8/mqdefault.jpg',
     visualContentUrlAlt: null,
     modalContentObj: modalContent.channingHillCam,
-    stationNightImg: 'https://i.ytimg.com/vi/P9SEtKcJik8/mqdefault.jpg',
+    stationNightImg: channingThumb, //'https://i.ytimg.com/vi/P9SEtKcJik8/mqdefault.jpg'
     additionalContent: '',
     cameraViewText: 'null',
     stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
@@ -61,7 +66,7 @@ var stations = {
     wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/weed/KCAWEED23',
     visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-HerdPeak',
     visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-HerdPeak',
-    stationNightImg: 'ocean_beach1_sm.jpg',
+    stationNightImg: herdPeakThumb,
     additionalContent: moreWeedCameras,
     cameraViewText: 'Herd Peak looking south to Mt. Shasta.',
     stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
@@ -74,7 +79,7 @@ var stations = {
     wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/elk-creek/KCAELKCR11',
     visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-Sites1',
     visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-Sites1',
-    stationNightImg: 'ocean_beach1_sm.jpg',
+    stationNightImg: potatoThumb,
     additionalContent: '',
     cameraViewText: 'Sites Ca. looking west to Snow and St. John Mountains',
     stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
@@ -82,12 +87,12 @@ var stations = {
   'KCAAUBER10': {
     stationId: 'KCAAUBER10',
     type: 'station',
-    title: 'Above Tollhouse (Auberry Stn.)',
+    title: 'Tollhouse (Auberry Stn.)',
     description: 'Tollhouse, CA',
     wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/auberry/KCAAUBER10',
     visualContentUrl: 'http://api.nvseismolab.org/thumbnail/Axis-RoundMtnFresno',
     visualContentUrlAlt: 'http://api.nvseismolab.org/camera/Axis-RoundMtnFresno',
-    stationNightImg: 'ocean_beach1_sm.jpg',
+    stationNightImg: tollhouseThumb,
     additionalContent: '',
     cameraViewText: 'Round Mountain, Fresno Ca. looking north east to Tollhouse',
     stationStatsUpdateIntervalInSeconds: 303, // Seconds interval

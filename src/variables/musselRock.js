@@ -1,5 +1,10 @@
 
 import modalContent from './modalContent';
+import shaneThumb from '../images/mussel_shane_sm.jpg';
+import mussel1 from '../images/mussel1_sm.jpg';
+import funston1 from '../images/funston1_sm.jpg';
+import oceanBeach1 from '../images/ocean_beach1_sm.jpg';
+import pacificaPier from '../images/pacificaPierThumb.jpg';
 // Add or remove stations from the list by modifying the stations object
 // visualContentUrl is optional use 'visualContentUrl: null' for no image
 // the station key and the stationId MUST be the same
@@ -24,7 +29,7 @@ var stations = {
     visualContentUrl: 'https://www.mixdivr.org/livecam/pier_image_small.jpg',
     visualContentUrlAlt: null,
     modalContentObj: modalContent.pacificaPierCam,
-    stationNightImg: 'https://i.ytimg.com/vi/zYi_5AF6B2A/mqdefault.jpg',
+    stationNightImg: pacificaPier, //'https://i.ytimg.com/vi/zYi_5AF6B2A/mqdefault.jpg'
     additionalContent: null,
     cameraViewText: 'Looking west to the Pacifica pier.',
     stationStatsUpdateIntervalInSeconds: 201, // Seconds interval
@@ -37,7 +42,7 @@ var stations = {
     wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/daly-city/KCADALYC1',
     visualContentUrl: 'https://icons.wunderground.com/webcamramdisk/b/a/barenjager/5/current.jpg',
     visualContentUrlAlt: null,
-    stationNightImg: 'mussel_shane_sm.jpg',
+    stationNightImg: shaneThumb,
     additionalContent: morePacificaCameras,
     cameraViewText: 'Looking south toward Pedro Point from Longview Drive in Pacifica.',
     stationStatsUpdateIntervalInSeconds: 62 // Seconds interval
@@ -50,7 +55,7 @@ var stations = {
     wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/daly-city/KCADALYC37',
     visualContentUrl: 'https://icons.wunderground.com/webcamramdisk/b/a/barenjager/8/current.jpg',
     visualContentUrlAlt: null,
-    stationNightImg: 'mussel1_sm.jpg',
+    stationNightImg: mussel1,
     additionalContent: morePacificaCameras,
     cameraViewText: 'Looking north west over Mussel Rock bowl.',
     stationStatsUpdateIntervalInSeconds: 203, // Seconds interval
@@ -63,7 +68,7 @@ var stations = {
     wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/san-francisco/KCASANFR69',
     visualContentUrl: 'http://www.flyfunston.org/newwebcam/ropes1wslarge.jpg',
     visualContentUrlAlt: null,
-    stationNightImg: 'funston1_sm.jpg',
+    stationNightImg: funston1,
     additionalContent: morePacificaCameras,
     cameraViewText: 'Looking north west over Fort Funston launch.',
     stationStatsUpdateIntervalInSeconds: 207, // Seconds interval
@@ -76,7 +81,7 @@ var stations = {
     wundergroundLink: 'https://www.wunderground.com/forecast/us/ca/san-francisco/KCASANFR1683',
     visualContentUrl: 'http://www.oceanbeach.org/images/sunset.jpg',
     visualContentUrlAlt: null,
-    stationNightImg: 'ocean_beach1_sm.jpg',
+    stationNightImg: oceanBeach1,
     additionalContent: morePacificaCameras,
     cameraViewText: 'Looking north west past the Cliffhouse to Marin.',
     stationStatsUpdateIntervalInSeconds: 301, // Seconds interval

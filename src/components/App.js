@@ -21,7 +21,6 @@ import { setImgCacheBuster,
 
 // TODO:
 // work on photos for night images
-// banner messages
 // main image no zoom but link Funston
 // move night images into src
 
@@ -56,7 +55,7 @@ class App extends React.Component {
     }
 
     ///// Turn it to day or night for development purposes //////
-    //this.props.setIsDaytimeAction(false); // true = day / false = night
+    this.props.setIsDaytimeAction(false); // true = day / false = night
 
     if ( !this.props.isDaytime && !this.props.nightMessageHasBeenSeen ) {
       this.props.setNightMessageHasBeenSeen(true);
@@ -83,7 +82,6 @@ class App extends React.Component {
   render() {
     return (
       <div className={utils.objectTruthyKeysToString(this.props.appClasses)}>
-
         <div className="inner-content">
 
           <Sidebar />
