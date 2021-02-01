@@ -27,7 +27,7 @@ var stations = {
     stationNightImg: diabloWestThumb,
     additionalContent: moreDiabloCameras,
     cameraViewText: 'Mt. Diablo Peak looking south west.',
-    stationStatsUpdateIntervalInSeconds: 301 // Seconds interval
+    stationStatsUpdateIntervalInSeconds: 295 // Seconds interval
   },
   'KCADANVI19': {
     stationId: 'KCADANVI19',
@@ -55,7 +55,7 @@ var stations = {
     stationNightImg: diablo1Thumb,
     additionalContent: moreDiabloCameras,
     cameraViewText: 'Looking west accross the peak of Mt. Diablo',
-    stationStatsUpdateIntervalInSeconds: 301 // Seconds interval
+    stationStatsUpdateIntervalInSeconds: 305 // Seconds interval
   }
 }
 

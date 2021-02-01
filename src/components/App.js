@@ -55,7 +55,7 @@ class App extends React.Component {
     }
 
     ///// Turn it to day or night for development purposes //////
-    //this.props.setIsDaytimeAction(false); // true = day / false = night
+    //this.props.setIsDaytimeAction(true); // true = day / false = night
 
     if ( !this.props.isDaytime && !this.props.nightMessageHasBeenSeen ) {
       this.props.setNightMessageHasBeenSeen(true);

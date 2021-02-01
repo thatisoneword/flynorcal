@@ -42,7 +42,7 @@ var stations = {
     stationNightImg: vacaThumb,
     additionalContent: moreVacaCameras,
     cameraViewText: 'Mt Vaca looking north east.',
-    stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
+    stationStatsUpdateIntervalInSeconds: 290, // Seconds interval
   },
   'KCABENIC65': {
     stationId: 'KCABENIC65',
@@ -69,7 +69,7 @@ var stations = {
     stationNightImg: herdPeakThumb,
     additionalContent: moreWeedCameras,
     cameraViewText: 'Herd Peak looking south to Mt. Shasta.',
-    stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
+    stationStatsUpdateIntervalInSeconds: 308, // Seconds interval
   },
   'KCAELKCR11': {
     stationId: 'KCAELKCR11',
@@ -82,7 +82,7 @@ var stations = {
     stationNightImg: potatoThumb,
     additionalContent: '',
     cameraViewText: 'Sites Ca. looking west to Snow and St. John Mountains',
-    stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
+    stationStatsUpdateIntervalInSeconds: 313, // Seconds interval
   },
   'KCAAUBER10': {
     stationId: 'KCAAUBER10',
@@ -95,7 +95,7 @@ var stations = {
     stationNightImg: tollhouseThumb,
     additionalContent: '',
     cameraViewText: 'Round Mountain, Fresno Ca. looking north east to Tollhouse',
-    stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
+    stationStatsUpdateIntervalInSeconds: 320, // Seconds interval
   }
 }
 

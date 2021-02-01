@@ -52,7 +52,7 @@ var stations = {
     stationNightImg: muirBeachThumb,
     additionalContent: moreTamCameras,
     cameraViewText: 'Looking north from Muir Beach.',
-    stationStatsUpdateIntervalInSeconds: 207, // Seconds interval
+    stationStatsUpdateIntervalInSeconds: 270, // Seconds interval
   },
   // 'KCAMILLV87': {
   //   stationId: 'KCAMILLV87',
@@ -78,7 +78,7 @@ var stations = {
     stationNightImg: stinsonThumb,
     additionalContent: moreTamCameras,
     cameraViewText: 'Looking south east over Bolinas Lagoon to Stinson Beach',
-    stationStatsUpdateIntervalInSeconds: 303, // Seconds interval
+    stationStatsUpdateIntervalInSeconds: 315, // Seconds interval
   }
 }
 

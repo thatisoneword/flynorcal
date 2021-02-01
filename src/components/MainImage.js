@@ -5,26 +5,21 @@ import './MainImage.css';
 
 class MainImage extends React.Component {
 
-  zoomImage = () => {
-    if (!this.props.isDaytime) return;
-
-    this.props.toggleAppClasses('main-image-zoomed')
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });;
-  }
-
   useMainImage = null;
 
   renderMainImg = () => {
     if (this.useMainImage) {
       return (
-        <img id="mainImg"
-        className={this.props.flyingSite.name}
-        src={`${this.props.flyingSite.mainImgUrl}?random=${this.props.imgCacheBuster}`}
-        alt="Fort Funston" />
+        <a
+          href={`${this.props.flyingSite.mainImgUrl}?random=${this.props.imgCacheBuster}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img id="mainImg"
+          className={this.props.flyingSite.name}
+          src={`${this.props.flyingSite.mainImgUrl}?random=${this.props.imgCacheBuster}`}
+          alt="Fort Funston" />
+        </a>
       );
     } else {
       return (
@@ -39,9 +34,7 @@ class MainImage extends React.Component {
   render() {
     this.useMainImage = this.props.isDaytime && !!(this.props.flyingSite.mainImgUrl);
     return(
-      <div id="main-img-and-message"
-        onClick={() => this.zoomImage()}
-        className={!(this.useMainImage) ? 'useBackupImage' : ''}>
+      <div id="main-img-and-message" >
         { this.renderMainImg() }
       </div>
     );
