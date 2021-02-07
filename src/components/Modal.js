@@ -20,7 +20,7 @@ class Modal extends React.Component {
   // title: string
   // visualContentUrl: absolute URL
   //////////////////////////
-  // optional object properties
+  // optional properties
   // description: string
   // link: absolute url
   // linkText: string
@@ -30,28 +30,21 @@ class Modal extends React.Component {
   componentDidUpdate() {
     if (this.loadedRef.current) {
       this.loadedRef.current.addEventListener('load', this.setContentLoaded);
-
     }
   }
-
-  // modalStyleHeight = 444;
-
-  // modalContentLoaded = () => {
-  //   console.log('The model Content loaded callback');
-  // }
 
   setContentLoaded = () => {
     if (!this.state.contentLoaded) {
       // this is to get rid of the loader once the content is loaded, because
-      // the modal is resizable you can still see the loding image
+      // the modal is resizable you can sometimes still see the loding image
       this.setState({ contentLoaded: true });
 
       // this is becase the dynamic content in the modal was not triggering the
-      // scroll bars so we add a modal style height and that fixes it
+      // scrollbars so we add a modal style height and that fixes it
       const innerHeight = this.modalContentInnerRef.current.clientHeight;
       const outerHeight = this.modalContentContainerRef.current.clientHeight
       if (innerHeight >= outerHeight) {
-        this.setState({ modalStyleHeight: outerHeight }); // triggers scroll
+        this.setState({ modalStyleHeight: outerHeight }); // triggers scrollbar
       }
     }
   }

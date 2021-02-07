@@ -18,7 +18,7 @@ class HighChart extends React.Component {
   }
 
   getTimezoneOffsetForPST = () => {
-    return this.isDST(new Date()) ? 480 : 420;
+    return this.isDST(new Date()) ? 420 : 480;
   }
 
   componentDidMount() {

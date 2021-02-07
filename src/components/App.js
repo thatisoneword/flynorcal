@@ -19,10 +19,6 @@ import { setImgCacheBuster,
           setNightMessageHasBeenSeen,
           addBannerMessage } from '../actions';
 
-// TODO:
-// work on photos for night images
-// main image no zoom but link Funston
-// move night images into src
 
 class App extends React.Component {
 
@@ -47,21 +43,26 @@ class App extends React.Component {
 
     const dawnISO = times.nauticalDawn.toISOString();
     const duskISO = times.nauticalDusk.toISOString();
-    const nowISO = new Date().toISOString();
+
+    let d = new Date();
+    ///// Turn it to day or night for development purposes //////
+    //d.setHours(20,0,0,0); // set time now to 10pm
+    //d.setHours(11,0,0,0); // set time now to 11am
+    const nowISO = d.toISOString();
+
+    if ( nowISO > duskISO && !this.props.nightMessageHasBeenSeen ) {
+      this.setNightBanner();
+    }
 
     // only set it if it changed
     if ( nowISO > dawnISO && (nowISO < duskISO) !== this.props.isDaytime ) {
       this.props.setIsDaytimeAction(!this.props.isDaytime);
     }
+  }
 
-    ///// Turn it to day or night for development purposes //////
-    //this.props.setIsDaytimeAction(true); // true = day / false = night
-
-    if ( !this.props.isDaytime && !this.props.nightMessageHasBeenSeen ) {
-      this.props.setNightMessageHasBeenSeen(true);
-      this.props.addBannerMessage(nightMessage);
-    }
-
+  setNightBanner = () => {
+    this.props.setNightMessageHasBeenSeen(true);
+    this.props.addBannerMessage(nightMessage);
   }
 
   setImgCacheBuster = () => {
@@ -76,7 +77,7 @@ class App extends React.Component {
   }
 
   handleSelectClick = (e) => {
-    e.stopPropagation()
+    e.stopPropagation();
   }
 
   render() {

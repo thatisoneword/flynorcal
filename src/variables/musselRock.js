@@ -5,9 +5,7 @@ import mussel1 from '../images/mussel1_sm.jpg';
 import funston1 from '../images/funston1_sm.jpg';
 import oceanBeach1 from '../images/ocean_beach1_sm.jpg';
 import pacificaPier from '../images/pacificaPierThumb.jpg';
-// Add or remove stations from the list by modifying the stations object
-// visualContentUrl is optional use 'visualContentUrl: null' for no image
-// the station key and the stationId MUST be the same
+// See the stations object below for details on adding stations
 
 const morePacificaCameras = <div className="additional-content">
   Additional views:
@@ -20,6 +18,24 @@ const morePacificaCameras = <div className="additional-content">
 
 
 var stations = {
+  ///////////////////////  Add / Remove stations //////////////////////////
+  // each station must have a unique WunderGround key/stationId
+  // the key below is a Wunderground ID for the station
+  //
+  // 'KCAPACIF205': {
+  //   stationId: 'KCAPACIF205', // this must be the same as the station key above
+  //   type: 'station', // used to tell the modal about the object type
+  //   title: 'Pacifica Pier',
+  //   description: 'Pacifica State Beach',
+  //   wundergroundLink: 'https://www.wunderground.com/weather/us/ca/pacifica/KCAPACIF205', // WunderGroud Station link
+  //   visualContentUrl: 'https://www.mixdivr.org/livecam/pier_image_small.jpg', // this is the station thumbnail
+  //   visualContentUrlAlt: null, // this is used to link the station image to an external URL instead of a modal
+  //   modalContentObj: modalContent.pacificaPierCam, // will use this object (see import above) for the modal data instead of the station obj
+  //   stationNightImg: pacificaPier, // this image is imported above and is used during night hours
+  //   additionalContent: null, // used in the modal for extra links when needed
+  //   cameraViewText: 'Looking west to the Pacifica pier.', // modal picture text
+  //   stationStatsUpdateIntervalInSeconds: 201, // refresh interval in seconds
+  // },
   'KCAPACIF205': {
     stationId: 'KCAPACIF205',
     type: 'station',
@@ -29,7 +45,7 @@ var stations = {
     visualContentUrl: 'https://www.mixdivr.org/livecam/pier_image_small.jpg',
     visualContentUrlAlt: null,
     modalContentObj: modalContent.pacificaPierCam,
-    stationNightImg: pacificaPier, //'https://i.ytimg.com/vi/zYi_5AF6B2A/mqdefault.jpg'
+    stationNightImg: pacificaPier, //'https://i.ytimg.com/vi/zYi_5AF6B2A/mqdefault.jpg' this is Youtubes thumbnail
     additionalContent: null,
     cameraViewText: 'Looking west to the Pacifica pier.',
     stationStatsUpdateIntervalInSeconds: 201, // Seconds interval
