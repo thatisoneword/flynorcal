@@ -4,7 +4,7 @@
 
 Clone the project navigate to the new repo and run `npm install`
 run `npm start` a browser should automatically start at 'http://localhost:3000'
-When you update files you changes are usually automatically reflected in the browser.
+When you update files changes are automatically reflected in the browser.
 
 ## Building For Production
 
