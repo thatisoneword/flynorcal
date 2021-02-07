@@ -1,4 +1,19 @@
-# Getting Started with Create React App
+## To update or build this project
+
+## Updating
+
+Clone the project navigate to the new repo and run `npm install`
+run `npm start` a browser should automatically start at 'http://localhost:3000'
+When you update files you changes are usually automatically reflected in the browser.
+
+## Building For Production
+
+You will still need to have run `npm install` above
+run `npm build` this creates a build directory
+Point a Web Server inside the build directory to test the build. (I use the Chrome web server).
+You can now move the contents from the build folder to the appropriate place to serve them.
+
+### Create React App information
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
