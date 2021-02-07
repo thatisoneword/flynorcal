@@ -8,9 +8,9 @@ When you update files changes are automatically reflected in the browser.
 
 ## Building For Production
 
-You will still need to have run `npm install` above
-run `npm build` this creates a build directory
-Point a Web Server inside the build directory to test the build. (I use the Chrome web server).
+You will still need to have cloned and  run `npm install` as above
+run `npm build` this creates a build directory.
+To test the build point a Web Server inside the build directory. (I use the Chrome web server).
 You can now move the contents from the build folder to the appropriate place to serve them.
 
 ### Create React App information
