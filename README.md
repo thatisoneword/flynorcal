@@ -9,7 +9,7 @@
 ## Building For Production
 
 * Clone repo and run `npm install`, same steps as above.
-* run `npm build` this creates a build directory.
+* run `npm run build` this creates a build directory.
 * Test the new build, point a Web Server inside the build directory. (I use Web Server for Chrome).
 * Once you are happy with the build, move the contents from the build folder to the appropriate place to serve them.
 

@@ -19,6 +19,8 @@ class SidebarContent extends React.Component {
 
         <div className="bar-item bar-header top-space" >NWS Forecasts</div>
         <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.nwsMissionPeak)}>Mission Peak NWS</button>
+
+        <div className="bar-item bar-header top-space" >Soundings</div>
         <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.oaklandSounding)}>Oakland Sounding</button>
         <button className="bar-item format-button" onClick={() => this.props.setModalKey(modalContent.vandenbergSounding)}>Vandenberg Sounding</button>
 

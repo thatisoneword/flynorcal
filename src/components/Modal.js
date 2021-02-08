@@ -93,8 +93,8 @@ class Modal extends React.Component {
         </div>
         <div className="modal-dynamic-container">
           {imgOrIframe}
-          {item.cameraViewText && <div className="camera-text">{item.cameraViewText}</div>}
-          {item.additionalContent}
+          {item.cameraViewText && <div className="image-text">{item.cameraViewText}</div>}
+          {item.additionalContent && <div className="image-text">{item.additionalContent}</div>}
         </div>
       </>
     );
