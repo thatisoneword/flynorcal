@@ -3,8 +3,8 @@
 ## Updating
 
 * Clone the repo and and inside the new project run `npm install`
-* Run `npm start` a browser should automatically open to 'http://localhost:3000'
-* When you update files the changes are automatically reflected in the browser but some changes my require a refresh.
+* Run `npm start`, a browser should automatically open to 'http://localhost:3000'
+* When you update files the changes are automatically reflected in the browser but some changes may require a refresh.
 
 ## Building For Production
 
