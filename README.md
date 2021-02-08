@@ -2,16 +2,16 @@
 
 ## Updating
 
-Clone the project navigate to the new repo and run `npm install`
-run `npm start` a browser should automatically start at 'http://localhost:3000'
-When you update files changes are automatically reflected in the browser.
+* Clone the repo and and inside the new project run `npm install`
+* Run `npm start` a browser should automatically open to 'http://localhost:3000'
+* When you update files the changes are automatically reflected in the browser but some changes my require a refresh.
 
 ## Building For Production
 
-You will still need to have cloned and  run `npm install` as above
-run `npm build` this creates a build directory.
-To test the build point a Web Server inside the build directory. (I use the Chrome web server).
-You can now move the contents from the build folder to the appropriate place to serve them.
+* Clone repo and run `npm install`, same steps as above.
+* run `npm build` this creates a build directory.
+* Test the new build, point a Web Server inside the build directory. (I use Web Server for Chrome).
+* Move the contents from the build folder to the appropriate place to serve them.
 
 ### Create React App information
 
