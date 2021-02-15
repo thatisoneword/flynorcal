@@ -9,6 +9,13 @@ export const addBannerMessage = (msgObj) => {
   };
 }
 
+export const setShouldAutoUpdate = () => {
+  return {
+    type: 'AUTO_UPDATING',
+    payload: false
+  };
+}
+
 export const setNightMessageHasBeenSeen = (nightMessageSeenFlag) => {
   return {
     type: 'NIGHT_MESSAGE_HAS_BEEN_SEEN',

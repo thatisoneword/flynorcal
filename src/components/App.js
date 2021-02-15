@@ -10,28 +10,34 @@ import AllStations from './AllStations';
 import Modal from './Modal';
 import utils from './utils';
 import AlertBanner from './AlertBanner';
-import { nightMessage } from '../variables/bannerMessages';
+import { nightMessage, autoRefreshStoppedMessage } from '../variables/bannerMessages';
 
 import { setImgCacheBuster,
           setImgCacheBusterDelayed,
           setIsDaytimeAction,
           toggleAppClasses,
           setNightMessageHasBeenSeen,
-          addBannerMessage } from '../actions';
+          addBannerMessage,
+          setShouldAutoUpdate } from '../actions';
 
 
 class App extends React.Component {
 
   cacheBusterIntervalInMinutes = 5;
+  autoRefreshTimeOutInMinutes = 20;
 
   componentDidMount() {
     setInterval( () => this.setImgCacheBuster(), 60000 * this.cacheBusterIntervalInMinutes );
     setInterval( () => this.setIsDaytime(), 60000 ); // check if it's daytime once a minute
+    // Set the autoUpdate timeout
+    setTimeout( () => this.autoRefreshTimedOut(), this.autoRefreshTimeOutInMinutes * 60000 );
     this.setIsDaytime();
 
     // console.log('this the cookie', utils.getCookie('flyingSite'));
     // console.log('setting cookie', utils.setCookie('flyingSite1', 'bop', 1))
     // console.log('the full cookie', document.cookie);
+
+    window.long = true;
   }
 
   setIsDaytime = () => {
@@ -57,6 +63,17 @@ class App extends React.Component {
     // only set it if it changed
     if ( nowISO > dawnISO && (nowISO < duskISO) !== this.props.isDaytime ) {
       this.props.setIsDaytimeAction(!this.props.isDaytime);
+    }
+  }
+
+  autoRefreshTimedOut = () => {
+    if (!window.keepAlive) {
+      this.props.setShouldAutoUpdate() // sets to false so no auto update
+      this.props.addBannerMessage(autoRefreshStoppedMessage);
+    } else {
+      window.keepAlive = false;
+      // give 40 more minutes of autorefresh time
+      setTimeout( () => this.autoRefreshTimedOut(), 40 * 60000);
     }
   }
 
@@ -112,4 +129,11 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { setImgCacheBuster, setImgCacheBusterDelayed, setIsDaytimeAction, toggleAppClasses, setNightMessageHasBeenSeen, addBannerMessage })(App);
+export default connect(mapStateToProps, {
+  setImgCacheBuster,
+  setImgCacheBusterDelayed,
+  setIsDaytimeAction,
+  toggleAppClasses,
+  setNightMessageHasBeenSeen,
+  addBannerMessage,
+  setShouldAutoUpdate })(App);

@@ -42,7 +42,7 @@ class Sidebar extends React.Component {
             target="_blank"
             rel="noreferrer">Help And Feedback
         </a>
-
+        <div onClick = {() => {console.log('Extending auto-refresh time'); window.keepAlive = true}}>&nbsp;</div>
       </div>
     );
   }

@@ -10,6 +10,16 @@ export const nightMessage = {
   linkText: ''
 }
 
+export const autoRefreshStoppedMessage = {
+  title: 'Auto updates have stopped - ',
+  message:'Please refresh if necessary',
+  priority: 'yellow',
+  dismissable: false,
+  bannerVisabilityPerSite: [],
+  linkUrl: '',
+  linkText: ''
+}
+
 // const testMessage = {
 //   title: 'Warning - ',
 //   message:'Your are too cool to fly today',

@@ -8,18 +8,24 @@ class StationHistory extends React.Component {
   stationId = this.props.stationId;
   histArray = [];
   historyDataSmall = [];
-  updateInterval = null;
+  historyUpdateInterval = null;
   historyDataRefreshInMinutes = 6 // Minute update interval to fetch the historical data
 
   componentDidMount() {
     this.props.getHistoryStationData(this.stationId);
     // random 0 - 9 seconds added so they don't all update at once
     const updateInterval = 60000 * this.historyDataRefreshInMinutes + (Math.floor(Math.random() * 10000))
-    this.updateInterval = setInterval( () => this.props.getHistoryStationData(this.stationId), updateInterval);
+    this.historyUpdateInterval = setInterval( () => this.updateHistory(), updateInterval);
   }
 
   componentWillUnmount() {
-    clearInterval(this.updateInterval);
+    clearInterval(this.historyUpdateInterval);
+  }
+
+  updateHistory = () => {
+    if (this.props.shouldAutoUpdate) {
+      this.props.getHistoryStationData(this.stationId);
+    }
   }
 
   renderHistoryList = () => {
@@ -83,7 +89,8 @@ class StationHistory extends React.Component {
 const mapStateToProps = (state) => {
   return {
     allStations: state.allStations,
-    stationHistory: state.stationHistory
+    stationHistory: state.stationHistory,
+    shouldAutoUpdate: state.shouldAutoUpdate
   }
 }
 

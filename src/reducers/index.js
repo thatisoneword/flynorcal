@@ -28,7 +28,16 @@ const INITIAL_STATE = {
   modalKey: '',
   flyingSite: 'musselRock',
   nightMessageHasBeenSeen: false,
-  error: null
+  shouldAutoUpdate: true
+}
+
+export const shouldAutoUpdateReducer = (state = INITIAL_STATE.shouldAutoUpdate, action) => {
+  switch (action.type) {
+  case 'AUTO_UPDATING':
+    return action.payload;
+  default:
+    return state;
+  }
 }
 
 export const bannerMessageReducer = (state = bannerMessages, action) => {
@@ -159,7 +168,7 @@ export default combineReducers({
   stationHistory: stationHistoryReducer,
   imgCacheBuster: imgCacheBusterReducer,
   imgCacheBusterDelayed: imgCacheBusterDelayedReducer,
-  shouldAutoUpdate: () => true,
+  shouldAutoUpdate: shouldAutoUpdateReducer,
   isDaytime: isDaytimeReducer,
   appClasses: toggleAppClassesReducer,
   modalKey: modalKeyReducer,
