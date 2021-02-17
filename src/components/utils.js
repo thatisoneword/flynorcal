@@ -21,6 +21,12 @@ const setCookie = (name, value, expdays) => {
   document.cookie = name + "=" + value + ";" + expires + ";path=/";
 }
 
+const setNightBannerHasBeenSeenCookie = (noon) => {
+  let noonNextDay = new Date(noon.setDate(noon.getDate() + 1));
+  var expires = `expires=${noonNextDay.toUTCString()}`;
+  document.cookie = `nightBannerHasBeenSeen=expires at noon; ${expires}; path=/`;
+}
+
 const getCookie = (name) => {
   var nameEqual = name + "=";
   var ca = document.cookie.split(';');
@@ -70,7 +76,8 @@ const utils = {
   getCookie,
   checkCookie,
   expireCookie,
-  renderForcastsForSidebar
+  renderForcastsForSidebar,
+  setNightBannerHasBeenSeenCookie,
 }
 
 export default utils

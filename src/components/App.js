@@ -16,7 +16,6 @@ import { setImgCacheBuster,
           setImgCacheBusterDelayed,
           setIsDaytimeAction,
           toggleAppClasses,
-          setNightMessageHasBeenSeen,
           addBannerMessage,
           setShouldAutoUpdate } from '../actions';
 
@@ -34,16 +33,14 @@ class App extends React.Component {
     this.setIsDaytime();
 
     // console.log('this the cookie', utils.getCookie('flyingSite'));
-    // console.log('setting cookie', utils.setCookie('flyingSite1', 'bop', 1))
+    //console.log('setting cookie', utils.setCookie('flyingSite1', 'bop', 1))
     // console.log('the full cookie', document.cookie);
-
-    window.long = true;
   }
 
   setIsDaytime = () => {
     const times = suncalc.getTimes(new Date(), 37.753, -122.802);
 
-    // console.log('dusk', times);
+    //console.log('dusk', times);
     // console.log('dusk', times.nauticalDusk);
     // console.log('now', new Date());
 
@@ -56,8 +53,10 @@ class App extends React.Component {
     //d.setHours(11,0,0,0); // set time now to 11am
     const nowISO = d.toISOString();
 
-    if ( nowISO > duskISO && !this.props.nightMessageHasBeenSeen ) {
-      this.setNightBanner();
+    if ( nowISO > duskISO && !utils.getCookie('nightBannerHasBeenSeen') ) {
+      this.props.addBannerMessage(nightMessage);
+      utils.setNightBannerHasBeenSeenCookie(times.solarNoon);
+
     }
 
     // only set it if it changed
@@ -75,11 +74,6 @@ class App extends React.Component {
       // give 40 more minutes of autorefresh time
       setTimeout( () => this.autoRefreshTimedOut(), 40 * 60000);
     }
-  }
-
-  setNightBanner = () => {
-    this.props.setNightMessageHasBeenSeen(true);
-    this.props.addBannerMessage(nightMessage);
   }
 
   setImgCacheBuster = () => {
@@ -134,6 +128,5 @@ export default connect(mapStateToProps, {
   setImgCacheBusterDelayed,
   setIsDaytimeAction,
   toggleAppClasses,
-  setNightMessageHasBeenSeen,
   addBannerMessage,
   setShouldAutoUpdate })(App);

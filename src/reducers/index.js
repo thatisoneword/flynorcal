@@ -27,8 +27,7 @@ const INITIAL_STATE = {
   appClasses: {},
   modalKey: '',
   flyingSite: 'musselRock',
-  nightMessageHasBeenSeen: false,
-  shouldAutoUpdate: true
+  shouldAutoUpdate: true,
 }
 
 export const shouldAutoUpdateReducer = (state = INITIAL_STATE.shouldAutoUpdate, action) => {
@@ -44,15 +43,6 @@ export const bannerMessageReducer = (state = bannerMessages, action) => {
   switch (action.type) {
   case 'ADD_BANNER_MESSAGE':
     return [action.payload, ...state];
-  default:
-    return state;
-  }
-}
-
-export const nightMessageHasBeenSeenReducer = (state = INITIAL_STATE.nightMessageHasBeenSeen, action) => {
-  switch (action.type) {
-  case 'NIGHT_MESSAGE_HAS_BEEN_SEEN':
-     return action.payload
   default:
     return state;
   }
@@ -126,6 +116,20 @@ export const stationHistoryReducer = (state = INITIAL_STATE.stationHistory, acti
   }
 }
 
+// Blocked by CORS
+// export const cameraMetaDataReducer = (state = INITIAL_STATE.cameraMetaData, action) => {
+//   switch (action.type) {
+//   case 'GET_CAMERA_META':
+//   if (action.payload) {
+//      return {...state, ...action.payload};
+//   }
+//   break
+//   default:
+//     return state;
+//   }
+// }
+
+
 export const imgCacheBusterReducer = (state = INITIAL_STATE.imgCacheBuster, action) => {
   switch (action.type) {
   case 'SET_IMG_CACHEBUSTER':
@@ -173,6 +177,5 @@ export default combineReducers({
   appClasses: toggleAppClassesReducer,
   modalKey: modalKeyReducer,
   flyingSite: flyingSiteReducer,
-  bannerMessages: bannerMessageReducer,
-  nightMessageHasBeenSeen: nightMessageHasBeenSeenReducer
+  bannerMessages: bannerMessageReducer
 });

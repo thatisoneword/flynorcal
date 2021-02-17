@@ -1,4 +1,5 @@
 import getCurrentForcast from '../apis/axiosGetStationData';
+//import getStationMeta from '../apis/axiosGetStationMetaData';
 import utils from '../components/utils';
 // import { stations } from '../variables/stations';
 
@@ -13,13 +14,6 @@ export const setShouldAutoUpdate = () => {
   return {
     type: 'AUTO_UPDATING',
     payload: false
-  };
-}
-
-export const setNightMessageHasBeenSeen = (nightMessageSeenFlag) => {
-  return {
-    type: 'NIGHT_MESSAGE_HAS_BEEN_SEEN',
-    payload: nightMessageSeenFlag
   };
 }
 
@@ -82,13 +76,12 @@ export const getHistoryStationData = stationId => async dispatch => {
   });
 }
 
-
-
-
-// prams: {
-//   apiKey: appSettings.apiKey,
-//   stationId: stationId,
-//   numericPrecision: 'decimal',
-//   format: 'json',
-//   units: 'e'
+//Blocked by CORS
+// export const getCameraMetaData = stationId => async dispatch => {
+//   const response = await getStationMeta.get('/metadata', {});
+//
+//   dispatch({
+//     type: 'GET_CAMERA_META',
+//     payload: response.data
+//   });
 // }
