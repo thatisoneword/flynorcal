@@ -59,7 +59,7 @@ export const setModalKey = (key) => {
 }
 
 export const getCurrentStationData = stationId => async dispatch => {
-  const response = await getCurrentForcast.get('/current', { params: {stationId: stationId} });
+  const response = await getCurrentForcast.get('/current', { withCredentials: false, params: {stationId: stationId} });
 
   dispatch({
     type: 'GET_STATION_DATA',
@@ -68,7 +68,7 @@ export const getCurrentStationData = stationId => async dispatch => {
 }
 
 export const getHistoryStationData = stationId => async dispatch => {
-  const response = await getCurrentForcast.get('/all/1day', { params: {stationId: stationId} });
+  const response = await getCurrentForcast.get('/all/1day', { withCredentials: false, params: {stationId: stationId} });
 
   dispatch({
     type: 'GET_STATION_HISTORY',
