@@ -27,7 +27,7 @@ class AlertBanner extends React.Component {
            message.bannerVisabilityPerSite.indexOf(this.props.flyingSiteName) !== -1 ) {
 
         return(
-          <div className={` alert-banner-outer ${message.priority || 'blue'} `} key={message.title + message.index}>
+          <div className={` alert-banner-outer ${message.priority || 'blue'} `} key={message.title + index}>
             <div className="alert-banner-inner">
               {
                 message.dismissable &&
