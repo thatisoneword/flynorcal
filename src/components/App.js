@@ -12,7 +12,7 @@ import utils from './utils';
 import AlertBanner from './AlertBanner';
 import { nightMessage, autoRefreshStoppedMessage } from '../variables/bannerMessages';
 
-import { setImgCacheBuster,
+import {  setImgCacheBuster,
           setImgCacheBusterDelayed,
           setIsDaytimeAction,
           toggleAppClasses,
@@ -33,14 +33,14 @@ class App extends React.Component {
     this.setIsDaytime();
 
     // console.log('this the cookie', utils.getCookie('flyingSite'));
-    //console.log('setting cookie', utils.setCookie('flyingSite1', 'bop', 1))
+    // console.log('setting cookie', utils.setCookie('flyingSite1', 'bop', 1))
     // console.log('the full cookie', document.cookie);
   }
 
   setIsDaytime = () => {
     const times = suncalc.getTimes(new Date(), 37.753, -122.802);
 
-    //console.log('dusk', times);
+    // console.log('times', times);
     // console.log('dusk', times.nauticalDusk);
     // console.log('now', new Date());
 
@@ -51,6 +51,7 @@ class App extends React.Component {
     ///// Turn it to day or night for development purposes //////
     //d.setHours(20,0,0,0); // set time now to 10pm
     //d.setHours(11,0,0,0); // set time now to 11am
+    //d.setHours(4,0,0,0); // set time now to 4am
     const nowISO = d.toISOString();
 
     if ( nowISO > duskISO && !utils.getCookie('nightBannerHasBeenSeen') ) {
@@ -59,10 +60,14 @@ class App extends React.Component {
 
     }
 
-    // only set it if it changed
-    if ( nowISO > dawnISO && (nowISO < duskISO) !== this.props.isDaytime ) {
-      this.props.setIsDaytimeAction(!this.props.isDaytime);
+    // set isDayTime only if it has changed
+    const isDay = nowISO > dawnISO && (nowISO < duskISO);
+    if ( isDay && !this.props.isDaytime ) {
+      this.props.setIsDaytimeAction(true);
+    } else if ( !isDay && this.props.isDaytime ) {
+      this.props.setIsDaytimeAction(false);
     }
+
   }
 
   autoRefreshTimedOut = () => {

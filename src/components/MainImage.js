@@ -34,7 +34,7 @@ class MainImage extends React.Component {
   render() {
     this.useMainImage = this.props.isDaytime && !!(this.props.flyingSite.mainImgUrl);
     return(
-      <div id="main-img-and-message" >
+      <div id="main-img-and-message" className={this.props.flyingSite.name} >
         { this.renderMainImg() }
       </div>
     );
